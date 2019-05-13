@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>95543012588-9anmmnb29767lolqqvqoj7uqqnfbm06i.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.95543012588-9anmmnb29767lolqqvqoj7uqqnfbm06i</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDQmYYjJcZmB1YlCIU1nFOyg7sMkCsvPTA</string>
+	<key>GCM_SENDER_ID</key>
+	<string>95543012588</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.interdate-ltd.dating4disabled</string>
+	<key>PROJECT_ID</key>
+	<string>dating4disabled-1307</string>
+	<key>STORAGE_BUCKET</key>
+	<string>dating4disabled-1307.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:95543012588:ios:dff9ae634ecff2b3</string>
+	<key>DATABASE_URL</key>
+	<string>https://dating4disabled-1307.firebaseio.com</string>
+</dict>
+</plist>
