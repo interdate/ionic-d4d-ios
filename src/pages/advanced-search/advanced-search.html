@@ -1,0 +1,220 @@
+<!--
+  Generated template for the AdvancedSearch page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar>
+        <ion-title>advanced-search</ion-title>
+    </ion-navbar>
+
+</ion-header>
+<div tappable (click)="back()" class="back-btn">
+    <div>
+        <ion-icon name="ios-arrow-back"></ion-icon>
+    </div>
+</div>
+<ion-content padding>
+    <div *ngIf="form">
+
+        <ion-item tappable (click)="openSelect(form.userGender,'userGender')">
+            <ion-label>{{form.userGender.label}}
+                <div class="select-value">{{form.userGender.valLabel}}</div>
+            </ion-label>
+        </ion-item>
+        <ion-item tappable class="border-top" (click)="openSelect(form.ageFrom,'ageFrom')">
+            <ion-label>{{form.ageFrom.label}}
+                <div class="select-value">{{form.ageFrom.valLabel}}</div>
+            </ion-label>
+        </ion-item>
+        <ion-item tappable class="border-top" (click)="openSelect(form.ageTo,'ageTo')">
+            <ion-label>{{form.ageTo.label}}
+                <div class="select-value">{{form.ageTo.valLabel}}</div>
+            </ion-label>
+        </ion-item>
+
+        <ion-item tappable (click)="openSelect(form.countryCode,'countryCode')">
+            <ion-label>Country
+                <div class="select-value">{{form.countryCode.valLabel}}</div>
+            </ion-label>
+        </ion-item>
+        <ion-item tappable *ngIf="form.regionCode.choices?.length > 0" (click)="openSelect(form.regionCode,'regionCode')">
+            <ion-label>{{form.regionCode.label}}
+                <div class="select-value">{{form.regionCode.valLabel}}</div>
+            </ion-label>
+        </ion-item>
+        <ion-item>
+            <ion-input [(ngModel)]="form.userCityName.value" placeholder="{{form.userCityName.label}}"
+                       type="text"></ion-input>
+        </ion-item>
+        <ion-item *ngIf="form.zipCode && form.countryCode.value =='US'">
+            <ion-input [(ngModel)]="form.zipCode.value" placeholder="{{form.zipCode.label}} :" type="text"></ion-input>
+        </ion-item>
+        <div tappable (click)="photoValue()" class="memb-photo">
+            <ion-checkbox color="danger" item-right [(ngModel)]="form.withPhotos.value"></ion-checkbox>
+            <ion-label item-left>{{ form.withPhotos.label }}</ion-label>
+        </div>
+        <ion-item>
+            <ion-label>{{form.sexPrefId.label}}</ion-label>
+            <ion-select item-content interface="action-sheet" multiple="true" [(ngModel)]="form.sexPrefId.value">
+                <ion-option value="{{sexPrefId.value}}" *ngFor="let sexPrefId of form.sexPrefId.choices">
+                    {{sexPrefId.label}}
+                </ion-option>
+            </ion-select>
+        </ion-item>
+        <ion-item>
+            <ion-label>{{form.maritalStatusId.label}}</ion-label>
+            <ion-select item-content interface="action-sheet" multiple="true"  [(ngModel)]="form.maritalStatusId.value">
+                <ion-option value="{{maritalStatusId.value}}"
+                            *ngFor="let maritalStatusId of form.maritalStatusId.choices">
+                    {{maritalStatusId.label}}
+                </ion-option>
+            </ion-select>
+        </ion-item>
+        <ion-item tappable (click)="openSelect(form.userChildren,'userChildren')">
+            <ion-label>{{form.userChildren.label}}
+                <div class="select-value">{{form.userChildren.valLabel}}</div>
+            </ion-label>
+        </ion-item>
+        <ion-item>
+            <ion-label>{{form.languageId.label}}</ion-label>
+            <ion-select multiple="true" item-content interface="action-sheet" [(ngModel)]="form.languageId.value">
+                <ion-option value="{{languageId.value}}" *ngFor="let languageId of form.languageId.choices">
+                    {{languageId.label}}
+                </ion-option>
+            </ion-select>
+        </ion-item>
+        <ion-item>
+            <ion-label>{{form.ethnicOriginId.label}}</ion-label>
+            <ion-select multiple="true" item-content interface="action-sheet" [(ngModel)]="form.ethnicOriginId.value">
+                <ion-option value="{{ethnicOriginId.value}}" *ngFor="let ethnicOriginId of form.ethnicOriginId.choices">
+                    {{ethnicOriginId.label}}
+                </ion-option>
+            </ion-select>
+        </ion-item>
+        <ion-item>
+            <ion-label>{{form.religionId.label}}</ion-label>
+            <ion-select multiple="true" item-content interface="action-sheet" [(ngModel)]="form.religionId.value">
+                <ion-option value="{{religionId.value}}" *ngFor="let religionId of form.religionId.choices">
+                    {{religionId.label}}
+                </ion-option>
+            </ion-select>
+        </ion-item>
+        <ion-item>
+            <ion-label>{{form.educationId.label}}</ion-label>
+            <ion-select multiple="true" item-content interface="action-sheet" [(ngModel)]="form.educationId.value">
+                <ion-option value="{{educationId.value}}" *ngFor="let educationId of form.educationId.choices">
+                    {{educationId.label}}
+                </ion-option>
+            </ion-select>
+        </ion-item>
+        <ion-item>
+            <ion-label>{{form.occupationId.label}}</ion-label>
+            <ion-select multiple="true" item-content interface="action-sheet" [(ngModel)]="form.occupationId.value">
+                <ion-option value="{{occupationId.value}}" *ngFor="let occupationId of form.occupationId.choices">
+                    {{occupationId.label}}
+                </ion-option>
+            </ion-select>
+        </ion-item>
+        <ion-item>
+            <ion-label>{{form.incomeId.label}}</ion-label>
+            <ion-select multiple="true" item-content interface="action-sheet" [(ngModel)]="form.incomeId.value">
+                <ion-option value="{{incomeId.value}}" *ngFor="let incomeId of form.incomeId.choices">{{incomeId.label}}
+                </ion-option>
+            </ion-select>
+        </ion-item>
+        <ion-item>
+            <ion-label>{{form.appearanceId.label}}</ion-label>
+            <ion-select multiple="true" item-content interface="action-sheet" [(ngModel)]="form.appearanceId.value">
+                <ion-option value="{{appearance.value}}" *ngFor="let appearance of form.appearanceId.choices">
+                    {{appearance.label}}
+                </ion-option>
+            </ion-select>
+        </ion-item>
+        <ion-item>
+            <ion-label>{{form.bodyTypeId.label}}</ion-label>
+            <ion-select multiple="true" item-content interface="action-sheet" [(ngModel)]="form.bodyTypeId.value">
+                <ion-option value="{{bodyType.value}}" *ngFor="let bodyType of form.bodyTypeId.choices">
+                    {{bodyType.label}}
+                </ion-option>
+            </ion-select>
+        </ion-item>
+        <ion-item>
+            <ion-label>{{form.hairLengthId.label}}</ion-label>
+            <ion-select multiple="true" item-content interface="action-sheet" [(ngModel)]="form.hairLengthId.value">
+                <ion-option value="{{hairLengthId.value}}" *ngFor="let hairLengthId of form.hairLengthId.choices">
+                    {{hairLengthId.label}}
+                </ion-option>
+            </ion-select>
+        </ion-item>
+        <ion-item>
+            <ion-label>{{form.hairColorId.label}}</ion-label>
+            <ion-select multiple="true" item-content interface="action-sheet" [(ngModel)]="form.hairColorId.value">
+                <ion-option value="{{hairColorId.value}}" *ngFor="let hairColorId of form.hairColorId.choices">
+                    {{hairColorId.label}}
+                </ion-option>
+            </ion-select>
+        </ion-item>
+        <ion-item>
+            <ion-label>{{form.eyesColorId.label}}</ion-label>
+            <ion-select multiple="true" item-content interface="action-sheet" [(ngModel)]="form.eyesColorId.value">
+                <ion-option value="{{eyesColorId.value}}" *ngFor="let eyesColorId of form.eyesColorId.choices">
+                    {{eyesColorId.label}}
+                </ion-option>
+            </ion-select>
+        </ion-item>
+        <ion-item>
+            <ion-label>{{form.smokingId.label}}</ion-label>
+            <ion-select multiple="true" item-content interface="action-sheet" [(ngModel)]="form.smokingId.value">
+                <ion-option value="{{smokingId.value}}" *ngFor="let smokingId of form.smokingId.choices">
+                    {{smokingId.label}}
+                </ion-option>
+            </ion-select>
+        </ion-item>
+        <ion-item>
+            <ion-label>{{form.drinkingId.label}}</ion-label>
+            <ion-select multiple="true" item-content interface="action-sheet" [(ngModel)]="form.drinkingId.value">
+                <ion-option value="{{drinking.value}}" *ngFor="let drinking of form.drinkingId.choices">
+                    {{drinking.label}}
+                </ion-option>
+            </ion-select>
+        </ion-item>
+        <ion-item>
+            <ion-label>{{form.lookingForIds.label}}</ion-label>
+            <ion-select multiple="true" item-content interface="action-sheet" [(ngModel)]="form.lookingForIds.value">
+                <ion-option value="{{lookingForIds.value}}" *ngFor="let lookingForIds of form.lookingForIds.choices">
+                    {{lookingForIds.label}}
+                </ion-option>
+            </ion-select>
+        </ion-item>
+        <ion-item>
+            <ion-label>{{form.healthId.label}}</ion-label>
+            <ion-select multiple="true" item-content interface="action-sheet" [(ngModel)]="form.healthId.value">
+                <ion-option value="{{healthId.value}}" *ngFor="let healthId of form.healthId.choices">{{healthId.label}}
+                </ion-option>
+            </ion-select>
+        </ion-item>
+        <ion-item>
+            <ion-label>{{form.mobilityId.label}}</ion-label>
+            <ion-select multiple="true" item-content interface="action-sheet" [(ngModel)]="form.mobilityId.value">
+                <ion-option value="{{mobilityId.value}}" *ngFor="let mobilityId of form.mobilityId.choices">
+                    {{mobilityId.label}}
+                </ion-option>
+            </ion-select>
+        </ion-item>
+
+        <div class="border-top">
+            <button full color="danger" tappable (click)=toSearchResultsPage() ion-button>Search</button>
+        </div>
+    </div>
+    <div [ngClass]="{'pbb': api.banner && api.banner?.src != ''}"></div>
+</ion-content>
+<ion-footer>
+
+    <ion-navbar class="footerMenu">
+        <ion-title></ion-title>
+    </ion-navbar>
+
+</ion-footer>

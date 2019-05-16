@@ -1,0 +1,37 @@
+<!--
+  Generated template for the Faq page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar>
+        <ion-title>edit-profile</ion-title>
+    </ion-navbar>
+    <!--<ion-title><button></button><ion-icon name="arrow-round-back"></ion-icon></button></ion-title>-->
+</ion-header>
+
+
+<ion-content padding>
+    <div *ngFor="let q of page">
+        <h2 class="headline">{{q?.name}}</h2>
+        <div *ngFor="let qa of q?.faq, let i = index" padding-top padding-bottom>
+            <div class="question" tappable (click)="hightlightStatus[i]=!hightlightStatus[i]"
+                 [class.highlight]="hightlightStatus[i]" [attr.data-selected]="false">{{qa.q }}</div>
+            <div class="answer" [class.highlight]="hightlightStatus[i]" [innerHTML]="qa.a.replace('https://support.apple.com/en-il/HT202039', 'https://support.apple.com/en-il/HT202039'.link('https://support.apple.com/en-il/HT202039'))
+            .replace('http://dating4disabled.com/user/payment','http://dating4disabled.com/user/payment'.link('http://dating4disabled.com/user/payment'))
+            .replace('office@dating4disabled.com','office@dating4disabled.com'.link('mailto:office@dating4disabled.com'))">
+            </div>
+        </div>
+    </div>
+    <div [ngClass]="{'pbb': api.banner && api.banner?.src != ''}"></div>
+</ion-content>
+
+<ion-footer>
+
+    <ion-navbar class="footerMenu">
+        <ion-title></ion-title>
+    </ion-navbar>
+
+</ion-footer>

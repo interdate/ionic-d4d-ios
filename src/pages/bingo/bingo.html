@@ -1,0 +1,35 @@
+<!--
+  Generated template for the Bingo page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<ion-header>
+
+    <ion-navbar>
+        <ion-title>edit-profile</ion-title>
+    </ion-navbar>
+    <!--<ion-title><button></button><ion-icon name="arrow-round-back"></ion-icon></button></ion-title>-->
+</ion-header>
+<ion-content>
+    <div id="splashBingo">
+        <div class="wrap">
+            <div class="cancel" (click)="goBack();"></div>
+            <img class="bingoImg" src="https://dating4disabled.com/assets/frontend/images/bingo.png">
+            <div class="clear"></div>
+            <div class="rightPhoto">
+                <div class="imageBingo"
+                     [ngStyle]="{ 'background-image': 'url(' + 'http://dating4disabled.com/uploads/userpics/' + data?.bingo?.items[0]?.userImageId_1 + '.' + data?.bingo?.items[0]?.imageExt_1 +')'}"></div>
+            </div>
+            <div class="leftPhoto">
+                <div class="imageBingo"
+                     [ngStyle]="{ 'background-image': 'url(' + 'http://dating4disabled.com/uploads/userpics/' + data?.bingo?.items[0]?.userImageId_2 + '.' + data?.bingo?.items[0]?.imageExt_2 +')'}"></div>
+            </div>
+            <div class="plus"></div>
+            <div class="clear"></div>
+            <div class="chat" tappable (click)="toDialog()"></div>
+            <div class="ignore" tappable (click)="goBack();"></div>
+        </div>
+    </div>
+</ion-content>

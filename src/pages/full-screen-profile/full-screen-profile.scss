@@ -1,0 +1,47 @@
+page-full-screen-profile {
+  .content-md, .content-ios {
+    background-color: #000;
+  }
+
+  .close {
+    width: 70px;
+    height: 25px;
+    left: 0;
+    top: 13px;
+    position: absolute;
+    z-index: 9999;
+    padding: 25px;
+  }
+
+  .close img {
+    margin-top: -10px;
+  }
+
+  .message-profile-btn img {
+    width: 74%;
+    margin: 8px 3px;
+  }
+
+  .like-profile-btn img {
+    width: 70%;
+    margin-left: 5px;
+    margin-top: 4px;
+  }
+
+  .favorite-profile-btn img {
+    margin: 10px 6px;
+    max-width: 75%;
+  }
+
+  .profile-buttons .favorite-profile-btn,
+  .profile-buttons .like-profile-btn,
+  .profile-buttons .message-profile-btn {
+      background: rgba(233,232,229,0.5);
+      width: 49px;
+      height: 49px;
+      margin-bottom: 5px;
+      border-radius: 50%;
+      border: 1px solid rgba(1,1,1,.5)
+  }
+  .link-banner{display: none;}
+}

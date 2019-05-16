@@ -1,0 +1,1258 @@
+c // http://ionicframework.com/docs/v2/theming/
+  // App Global Sass
+  // --------------------------------------------------
+  // Put style rules here that you want to apply globally. These
+  // styles are for the entire app and not just one component.
+  // Additionally, this file can be also used as an entry point
+  // to import other Sass files to be included in the output CSS.
+  //
+  // Shared Sass variables, which can be used to adjust Ionic's
+  // default Sass variables, belong in "theme/variables.scss".
+  //
+  // To declare rules for a specific mode, create a child rule
+  // for the .md, .ios, or .wp mode classes. The mode class is
+  // automatically applied to the <body> element in the app.
+.item-md.item-input.ng-valid.input-has-value:not(.input-has-focus) .item-inner {
+  border-bottom-color: transparent;
+  box-shadow: none;
+}
+
+.item-md.item-input.input-has-focus .item-inner {
+  border-bottom-color: transparent;
+  box-shadow: none;
+}
+
+.near-by-sort {
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.7);
+  position: fixed;
+
+}
+
+.alert-md .alert-radio-label {
+  padding: 13px 23px;
+}
+
+.near-by-sort .text {
+  padding-left: 5px;
+}
+
+.near-by-sort button {
+  margin-left: 30px;
+}
+
+.near-by-sort .close {
+  padding: 10px;
+  float: right;
+  font-size: 20px;
+  margin-right: 25px;
+}
+
+.swiper-pagination-bullet-active {
+  background: #000;
+}
+
+.action-sheet-group .action-sheet-sub-title {
+  text-align: center;
+}
+
+ion-menu .item-md [item-right] {
+  margin: 15px 5px 0px 0;
+}
+
+.ios ion-menu .menu-inner {
+  background: #214888;
+}
+
+.ios ion-menu .menu-inner .label-ios {
+  margin-top: 0;
+  font-size: 1.1em;
+}
+
+.back-btn {
+  position: fixed;
+  z-index: 999999;
+  top: 30px;
+  left: 0;
+  padding-left: 5px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.back-btn > div {
+  border-radius: 50%;
+  background: rgba(233, 232, 229, 0.8);
+  width: 34px;
+  height: 34px;
+  text-align: center;
+  line-height: 34px;
+  border: 1px solid rgba(1, 1, 1, 0.5);
+}
+
+.btn-orange {
+  background: url("../assets/img/orange-gradient.jpg") #DA6000;
+  background-size: auto 100%;
+}
+
+.username {
+  color: #ccc;
+  text-align: center;
+  font-size: 16px;
+}
+
+.no_results {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+/*
+.item-md [item-right], .item-ios [item-right] {
+  margin: 16px 8px 0px 0;
+}
+*/
+
+ion-range.range-md.range-has-pin, ion-range.range-ios.range-has-pin {
+  padding-top: 10px;
+}
+
+.settings {
+  font-size: 25px;
+  color: white;
+  float: right;
+  margin-right: 30px;
+  clear: both;
+}
+
+.infinite-loading-spinner {
+  display: none;
+}
+
+ion-card.grey {
+  background-color: #ccc;
+}
+
+ion-infinite-scroll {
+  clear: both;
+
+}
+
+.age-label {
+  flex: initial !important;
+}
+
+.border-top {
+  border-top: 0.55px solid #c8c7cc;
+}
+
+.item-input .label-md, .item-select .label-md,
+.item-datetime .label-md, .item-input .label-ios,
+.item-select .label-ios, .item-datetime .label-ios {
+  color: #000;
+}
+
+.disabled {
+  opacity: 0.5;
+}
+
+.statistics {
+  float: right;
+  color: #fff;
+  line-height: 30px;
+}
+
+.text-input-ios {
+  width: 100%;
+}
+
+.err {
+  font-size: 12px;
+  color: red;
+}
+
+.num {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  color: #fff;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.photo ion-card {
+  position: relative;
+}
+
+.list-md, .list-ios {
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+ion-menu .list-ios {
+  margin-top: 45px;
+  padding-bottom: 30px;
+}
+
+#menu1 .contact-arrow {
+  margin-right: 10px;
+  float: right
+}
+
+#menu2 ion-list, #menu3 ion-list {
+  margin-top: 6px;
+}
+
+.list-md .item-block .item-inner, .list-ios .item-block .item-inner {
+  border: 0;
+}
+
+.side-menu .badge-md, .side-menu .badge-ios {
+  background-color: #ff2061;
+}
+
+.side-menu ion-icon {
+  margin-right: 25px;
+  width: 20px;
+  height: 20px;
+  font-size: 24px;
+}
+
+.side-menu {
+  .ion-ios-person, .ion-ios-cog, .ion-ios-mail, .ion-ios-log-out {
+    margin-left: 3px
+  }
+  .item-ios {
+    padding-left: 12px;
+  }
+}
+
+.profile-buttons {
+  position: fixed;
+  top: 70px;
+  right: 17px;
+  z-index: 9999;
+}
+
+textarea.text-input {
+  background: white;
+  border-radius: 5px;
+}
+
+input.text-input-md, input.text-input-ios {
+  padding: 8px;
+  border-radius: 5px;
+  background: white;
+}
+
+textarea.text-input-ios, textarea.text-input-md {
+  padding: 8px;
+}
+
+*::-webkit-input-placeholder {
+  color: #000 !important;
+}
+
+*:-moz-placeholder {
+  color: #000 !important;
+}
+
+*:-ms-input-placeholder {
+  /* IE10+ */
+  color: #000 !important;
+}
+
+.profile {
+  background: url(http://nysugardaddy.wee.co.il/media/photos/358/219-face.png) #214888 center no-repeat;
+  background-size: cover;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  margin: -35px auto 10px;
+  border: 5px solid #363e48;
+}
+
+#the_area {
+  background: url(../assets/img/icons/the-arena.png) center no-repeat;
+  width: 25px;
+  height: 25px;
+  margin-left: -5px;
+  background-size: contain;
+  margin-bottom: -6px;
+}
+
+#inbox {
+  background: url(../assets/img/icons/inbox.png) center no-repeat;
+  width: 30px;
+  height: 30px;
+  background-size: contain;
+}
+
+#notifications {
+  background: url(../assets/img/icons/notifications_ft.png) center no-repeat;
+  width: 20px;
+  height: 20px;
+  background-size: contain;
+}
+
+#edit_profile {
+  background: url(../assets/img/icons/edit-profile.png) center no-repeat;
+  width: 20px;
+  height: 20px;
+  background-size: contain;
+}
+
+#edit_photos {
+  background: url(../assets/img/icons/edit_photos.png) center no-repeat;
+  width: 20px;
+  height: 20px;
+  background-size: contain;
+}
+
+#change_password {
+  background: url(../assets/img/icons/change_password.png) center no-repeat;
+  width: 20px;
+  height: 20px;
+  background-size: contain;
+}
+
+#freeze_account {
+  background: url(../assets/img/icons/freeze_account.png) center no-repeat;
+  width: 20px;
+  height: 20px;
+  background-size: contain;
+}
+
+#viewed {
+  background: url(../assets/img/icons/viewed.png) center no-repeat;
+  width: 25px;
+  height: 25px;
+  background-size: contain;
+}
+
+#viewed_me {
+  background: url(../assets/img/icons/viewed-me.png) center no-repeat;
+  width: 25px;
+  height: 25px;
+  background-size: contain;
+}
+
+#contacted {
+  background: url(../assets/img/icons/contacted.png) center no-repeat;
+  width: 25px;
+  height: 25px;
+  background-size: contain;
+}
+
+#contacted_me {
+  background: url(../assets/img/icons/contacted-me.png) center no-repeat;
+  width: 25px;
+  height: 25px;
+  background-size: contain;
+  transform: scaleX(-1);
+}
+
+#favorited {
+  background: url(../assets/img/icons/favorited.png) center no-repeat;
+  width: 25px;
+  height: 25px;
+  background-size: contain;
+}
+
+#favorited_me {
+  background: url(../assets/img/icons/favorited_me.png) center no-repeat;
+  width: 25px;
+  height: 25px;
+  background-size: contain;
+}
+
+#blocked {
+  background: url(../assets/img/icons/blocked.png) center no-repeat;
+  width: 25px;
+  height: 25px;
+  background-size: contain;
+}
+
+#online {
+  background: url(../assets/img/icons/online.png) center no-repeat;
+  width: 20px;
+  height: 20px;
+  background-size: contain;
+}
+
+ion-header .menu-btn {
+  padding: 5px 16px;
+  margin: 0 -16px -5px;
+}
+
+.side-menu ion-icon {
+  color: #fff;
+}
+
+.toolbar-background-md, .toolbar-background-ios {
+  background-color: #214888;
+}
+
+.md ion-menu .menu-inner .item-md, .ios ion-menu .menu-inner .item-ios {
+  background: #214888;
+  color: #87909a;
+}
+
+.md ion-menu .menu-inner .content-md, .ios ion-menu .menu-inner .content-ios {
+  background: #214888;
+}
+
+ion-menu ion-icon.ion-md-lock,
+ion-menu ion-icon.ion-ios-lock {
+  margin-right: 25px;
+  font-size: 24px;
+}
+
+#menu {
+  background: url(../assets/img/icons/menuicon1.png) center no-repeat;
+  width: 30px;
+  height: 30px;
+  background-size: cover;
+}
+
+ion-header, ion-header button {
+  background-color: #214888;
+}
+
+.padding-top {
+  padding-top: 14px;
+}
+
+.ios ion-nav > .ion-page > .toolbar.statusbar-padding:first-child, .ios ion-nav > .ion-page > ion-header > .toolbar.statusbar-padding:first-child,
+.ios ion-tab > .ion-page > ion-header > .toolbar.statusbar-padding:first-child, .ios ion-tabs > .ion-page.tab-subpage > ion-header > .toolbar.statusbar-padding:first-child,
+.ios ion-menu > .menu-inner > .toolbar.statusbar-padding:first-child, .ios ion-menu > .menu-inner > ion-header > .toolbar.statusbar-padding:first-child {
+  min-height: 44px;
+}
+
+ion-header.header-ios .toolbar-ios {
+  height: 0;
+}
+
+.button-ios .button-inner {
+  text-transform: uppercase;
+}
+
+.alert-radio-label {
+  text-transform: none;
+}
+
+.logo {
+  width: 120px;
+  margin: auto;
+  display: block;
+  margin-top: 4px;
+}
+
+.list-ios > .item-block:first-child {
+  border: 0px;
+}
+
+.right {
+  float: right;
+}
+
+.clr {
+  clear: both;
+}
+
+.nmobile_footer {
+  background: #010100;
+}
+
+/* Mobile Footer */
+
+.menu-one, .menu-two {
+  bottom: 5px;
+  background: #214888;
+}
+
+.menu-one {
+  position: relative;
+  width: 100%;
+  float: left;
+}
+
+.menu-one .viewed {
+  max-height: 32px;
+  margin-top: -2px;
+  margin-bottom: -4px;
+}
+
+.menu-two {
+  margin-right: -100%;
+  /*margin-left: 2%;*/
+  position: relative;
+  width: 98%;
+  float: left;
+}
+
+.footer-menu .menu-two span.white {
+  color: #000000;
+  background-color: #fff;
+  width: 21px;
+  height: 21px;
+  line-height: 18px;
+}
+
+
+
+.footerMenu {
+  font-weight: bold;
+}
+
+/*
+.nmobile_footer a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.nmobile_footer ul li img.online {
+    width: 38px;
+    margin-bottom: 1.5px;
+}
+
+.nmobile_footer ul li img {
+    margin: 0 auto;
+    max-height: 25px;
+}
+
+.nmobile_footer ul li {
+    width: 23%;
+}
+*/
+.or {
+  width: 20%;
+  margin: 15px auto;
+  text-align: center;
+}
+
+/*
+* Side Menu
+*/
+
+.md ion-menu .menu-inner {
+  top: 56px;
+}
+
+.ios ion-menu .menu-inner {
+  top: 44px;
+}
+
+.md ion-menu .menu-inner .list-md {
+  margin-top: 55px;
+}
+
+#menu3 .badge-md, #menu3 .badge-ios {
+  background-color: #fff;
+  color: #000;
+}
+
+.side-menu .badge-ios {
+  margin-top: 16px;
+}
+
+.footer-menu ul {
+  padding-top: 5px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.footer .near-me ion-icon:before {
+  font-size: 25px;
+}
+
+.footer-menu ul li.more-btn {
+  height: 60px;
+  margin: -5px 0 -10px;
+  width: 8% !important;
+  z-index: 9999;
+  float: left;
+  border-left: 0;
+  border-right: 1px solid #fff;
+
+}
+
+.footer-menu .ion-md-more:before, .footer-menu .ion-ios-more:before {
+  font-size: 35px;
+  line-height: 55px;
+}
+
+.footer-menu .ion-md-mail:before, .footer-menu .ion-md-search:before, .footer-menu .ion-ios-mail:before, .footer-menu .ion-ios-search:before {
+  font-size: 30px;
+  line-height: 20px;
+}
+
+.footer-menu ul li.more-btn.menu-left {
+  border-right: 0;
+  border-left: 1px solid #fff;
+}
+
+.footer-menu ion-icon {
+  display: block;
+}
+
+.avatar {
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 300px;;
+  background-color: #fff;
+}
+
+/*
+* List Of Users
+*/
+
+.card-md, .card-ios {
+  background: #fff;
+}
+
+.usr_img {
+  float: left;
+  margin-right: 10px;
+  width: 100px;
+  height: 100px;
+  border-radius: 5px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.card-title-md, .card-title-ios {
+  font-size: 14px;
+}
+
+.card-title-md .name, .card-title-ios .name {
+  font-weight: bold;
+}
+
+.bingoimg {
+  padding: 13px 0 0 0;
+}
+
+.bingoimg img {
+  width: 30%;
+  float: right;
+  margin-bottom: 5px;
+}
+
+.usr_btn {
+  background: #fff;
+}
+
+.usr_btn p {
+  text-align: left;
+}
+
+.footer-menu {
+  color: #fff;
+}
+
+.footer-menu ul li {
+  float: left;
+  width: 23% !important;
+  font-size: 0.8em;
+  text-align: center;
+  position: relative;
+}
+
+.footer-menu ul li img.online {
+  width: 38px;
+  margin-bottom: 1.5px;
+}
+
+.footer-menu ul li img {
+  margin: 0 auto;
+  max-height: 25px;
+  display: block;
+}
+
+.footer-menu ul li span, .counter, .footer-menu .menu-two li:nth-child(3) span.white {
+  display: block;
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  text-align: center;
+  line-height: 24px;
+  background: url(../assets/img/orange-gradient.jpg);
+  background-color: #DA6000;
+  background-size: 100% 100%;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  font-size: 12px;
+  color: #fefdfd;
+  top: -10px;
+  left: 0;
+  border: 2px solid #fefdfd;
+  -webkit-box-shadow: 4px 4px 5px 0 rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 4px 4px 5px 0 rgba(0, 0, 0, 0.75);
+  box-shadow: 4px 4px 5px 0 rgba(0, 0, 0, 0.75);
+  box-sizing: border-box;
+}
+
+.footer-menu .menu-two .inbox_count {
+  background-image: none
+}
+
+.menu-inner button.item-ios:not([detail-none]) .item-inner {
+  padding-right: 0;
+}
+
+
+ion-footer.footer.footer-md * {
+  overflow: visible !important;
+}
+
+ion-footer {
+  background: #214888;
+}
+
+ion-item.item-md, ion-item.item-ios {
+  background-color: transparent;
+  padding-left: 0;
+}
+
+.list-ios > .item-block:last-child, .list-ios > .item-wrapper:last-child .item-block {
+  border-bottom: 0;
+}
+
+button.item-ios:not([detail-none]) .item-inner {
+  background-image: none;
+}
+
+.messageNotify {
+  width: 100%;
+  height: 85px;
+  background: #DA6000;
+  z-index: 99999;
+  text-align: center;
+  margin: auto;
+  position: fixed;
+  font-size: 24px;
+  bottom: 0;
+  right: 0;
+}
+
+.messageNotify ion-icon {
+  float: right;
+  padding: 5px 10px;
+}
+
+.messageNotify .name {
+  text-align: left;
+  margin: 15px 0 10px;
+}
+
+.messageNotify .avatar {
+  float: left;
+  width: 20%;
+  margin: 3%;
+  height: 75%;
+  background-color: #DA6000;
+}
+
+.messageNotify .content {
+  float: left;
+  font-size: 16px;
+  color: #fff;
+  font-weight: bold;
+}
+
+ion-footer.footer-md::before,
+ion-footer.footer-ios::before {
+  background-image: none;
+}
+
+@media (min-width: 320px) {
+  .footer-menu ul li {
+    font-size: 0.7em;
+  }
+}
+
+.smiles {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  text-indent: -10000px;
+  overflow: hidden;
+  cursor: text;
+  margin-bottom: -8px;
+  background: url('https://www.dating4disabled.com/assets/frontend/emoticons/support/skype/emoticons.png') no-repeat;
+  text-align: left;
+}
+
+.smile {
+  background-position: 0 0;
+}
+
+.sad-smile {
+  background-position: 0 -29px;
+}
+
+.big-smile {
+  background-position: 0 -58px;
+}
+
+.cool {
+  background-position: 0 -87px;
+}
+
+.surprised {
+  background-position: 0 -116px;
+}
+
+.wink {
+  background-position: 0 -145px;
+}
+
+.crying {
+  background-position: 0 -174px;
+}
+
+.sweating {
+  background-position: 0 -203px;
+}
+
+.speechless {
+  background-position: 0 -232px;
+}
+
+.kiss {
+  background-position: 0 -261px;
+}
+
+.tongue-out {
+  background-position: 0 -290px;
+}
+
+.blush {
+  background-position: 0 -319px;
+}
+
+.wondering {
+  background-position: 0 -348px;
+}
+
+.sleepy {
+  background-position: 0 -377px;
+}
+
+.dull {
+  background-position: 0 -406px;
+}
+
+.in-love {
+  background-position: 0 -435px;
+}
+
+.evil-grin {
+  background-position: 0 -464px;
+}
+
+.talking {
+  background-position: 0 -493px;
+}
+
+.yawn {
+  background-position: 0 -522px;
+}
+
+.puke {
+  background-position: 0 -551px;
+}
+
+.doh {
+  background-position: 0 -580px;
+}
+
+.angry {
+  background-position: 0 -609px;
+}
+
+.speechless-1 {
+  background-position: 0 -638px;
+}
+
+.it-wasnt-me {
+  background-position: 0 -667px;
+}
+
+.kiss-1 {
+  background-position: 0 -696px;
+}
+
+.party {
+  background-position: 0 -725px;
+}
+
+.tongue-out-1 {
+  background-position: 0 -754px;
+}
+
+.wondering-1 {
+  background-position: 0 -783px;
+}
+
+.worried {
+  background-position: 0 -812px;
+}
+
+.mmm {
+  background-position: 0 -841px;
+}
+
+.sleepy-1 {
+  background-position: 0 -870px;
+}
+
+.dull-1 {
+  background-position: 0 -899px;
+}
+
+.nerd {
+  background-position: 0 -928px;
+}
+
+.evil-grin-1 {
+  background-position: 0 -957px;
+}
+
+.lips-sealed {
+  background-position: 0 -986px;
+}
+
+.hi {
+  background-position: 0 -1015px;
+}
+
+.call {
+  background-position: 0 -1044px;
+}
+
+.devil {
+  background-position: 0 -1073px;
+}
+
+.angel {
+  background-position: 0 -1102px;
+}
+
+.angry-1 {
+  background-position: 0 -1131px;
+}
+
+.envy {
+  background-position: 0 -1160px;
+}
+
+.worried-1 {
+  background-position: 0 -1189px;
+}
+
+.nerd-1 {
+  background-position: 0 -1218px;
+}
+
+.wait {
+  background-position: 0 -1247px;
+}
+
+.bear {
+  background-position: 0 -1276px;
+}
+
+.lips-sealed-1 {
+  background-position: 0 -1305px;
+}
+
+.make-up {
+  background-position: 0 -1334px;
+}
+
+.giggle {
+  background-position: 0 -1363px;
+}
+
+.clapping {
+  background-position: 0 -1392px;
+}
+
+.thinking {
+  background-position: 0 -1421px;
+}
+
+.bow {
+  background-position: 0 -1450px;
+}
+
+.rofl {
+  background-position: 0 -1479px;
+}
+
+.whew {
+  background-position: 0 -1508px;
+}
+
+.happy {
+  background-position: 0 -1537px;
+}
+
+.smirk {
+  background-position: 0 -1566px;
+}
+
+.nod {
+  background-position: 0 -1595px;
+}
+
+.shake {
+  background-position: 0 -1624px;
+}
+
+.punch {
+  background-position: 0 -1653px;
+}
+
+.emo {
+  background-position: 0 -1682px;
+}
+
+.yes {
+  background-position: 0 -1711px;
+}
+
+.no {
+  background-position: 0 -1740px;
+}
+
+.handshake {
+  background-position: 0 -1769px;
+}
+
+.skype {
+  background-position: 0 -1798px;
+}
+
+.heart {
+  background-position: 0 -1827px;
+}
+
+.broken-heart {
+  background-position: 0 -1856px;
+}
+
+.mail {
+  background-position: 0 -1885px;
+}
+
+.flower {
+  background-position: 0 -1914px;
+}
+
+.rain {
+  background-position: 0 -1943px;
+}
+
+.sun {
+  background-position: 0 -1972px;
+}
+
+.time {
+  background-position: -29px 0;
+}
+
+.music {
+  background-position: -29px -29px;
+}
+
+.movie {
+  background-position: -29px -58px;
+}
+
+.phone {
+  background-position: -29px -87px;
+}
+
+.coffee {
+  background-position: -29px -116px;
+}
+
+.pizza {
+  background-position: -29px -145px;
+}
+
+.cash {
+  background-position: -29px -174px;
+}
+
+.muscle {
+  background-position: -29px -203px;
+}
+
+.cake {
+  background-position: -29px -232px;
+}
+
+.beer {
+  background-position: -29px -261px;
+}
+
+.drink {
+  background-position: -29px -290px;
+}
+
+.dance {
+  background-position: -29px -319px;
+}
+
+.ninja {
+  background-position: -29px -348px;
+}
+
+.star {
+  background-position: -29px -377px;
+}
+
+.mooning {
+  background-position: -29px -406px;
+}
+
+.middlefinger {
+  background-position: -29px -435px;
+}
+
+.bandit {
+  background-position: -29px -464px;
+}
+
+.drunk {
+  background-position: -29px -493px;
+}
+
+.smoke {
+  background-position: -29px -522px;
+}
+
+.toivo {
+  background-position: -29px -551px;
+}
+
+.rock {
+  background-position: -29px -580px;
+}
+
+.headbang {
+  background-position: -29px -609px;
+}
+
+.bug {
+  background-position: -29px -638px;
+}
+
+.fubar {
+  background-position: -29px -666px;
+}
+
+.poolparty {
+  background-position: -29px -695px;
+}
+
+.swear {
+  background-position: -29px -724px;
+}
+
+.tmi {
+  background-position: -29px -753px;
+}
+
+.heidy {
+  background-position: -29px -782px;
+}
+
+.myspace {
+  background-position: -29px -811px;
+}
+
+.malthe {
+  background-position: -29px -840px;
+}
+
+.tauri {
+  background-position: -29px -869px;
+}
+
+.priidu {
+  background-position: -29px -898px;
+}
+
+body .menu-inner {
+  -webkit-transition-duration: 50ms !important;
+  -moz-transition-duration: 50ms !important;
+  -o-transition-duration: 50ms !important;
+  transition-duration: 50ms !important;
+}
+
+.link-banner{
+  display: block;
+  position: absolute;
+  z-index: 10;
+  bottom: 52px;
+}
+
+.link-banner img{
+  max-height: 45px;
+  max-width: 92%;
+  margin: 0 4%;
+}
+
+.pbb{
+  height: 30px;
+  background: #eeeeee;
+}
+
+ion-infinite-scroll-content{
+  min-height: 20px;
+}
+
+#rm-fav{
+  background: url(../assets/img/icons/fav-min.png) center no-repeat;
+  width: 20px;
+  height: 20px;
+  background-size: contain;
+}
+
+#rm-fav + div{
+  margin: 0 -2px;
+}
+
+.socials{
+  position: relative;
+  text-align: center;
+}
+.left{
+  float: left;
+}
+.right{
+  float: right;
+}
+.social{
+  margin: 8px 2px 0px;
+  width: 34px;
+  height: 34px;
+  display: inline-block;
+}
+.socials-list{
+  width: 100%;
+  position: relative;
+  padding: 5px 0px;
+}
+.socials-list div{
+  display: inline-block;
+  width: calc(19% - 3.1px);
+  margin: 0 1px;
+}

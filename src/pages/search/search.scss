@@ -1,0 +1,36 @@
+page-search {
+
+	.bteween {
+		display: inline-block;
+	    vertical-align: top;
+	    text-align: center;
+	    padding: 0 5.4%;
+	    line-height: 29px;
+	}
+
+	ion-select, select-alertless, .select-value {
+		max-width: calc(100% - 80px);
+	}
+	ion-item .select-value{
+		float: right;
+		font-size: 16px;
+		color: #000;
+		padding: 0px;
+		margin: 0px;
+		background: none;
+		width: auto;
+	}
+
+	.select-value:before{
+		display: none;
+	}
+
+	.button-ios-danger {
+		margin-top: 20px;
+	}
+
+	.adv-search {
+		background: transparent;
+	}
+
+}

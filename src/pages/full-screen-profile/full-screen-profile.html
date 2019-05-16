@@ -1,0 +1,39 @@
+<!--
+  Generated template for the FullScreenProfile page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>edit-profile</ion-title>
+  </ion-navbar>
+  <!--<ion-title><button></button><ion-icon name="arrow-round-back"></ion-icon></button></ion-title>-->
+</ion-header>
+
+
+<ion-content>
+  <div *ngIf="myId != user.userId" class="profile-buttons">
+    <div *ngIf="user?.isAddFavorite == false" tappable (click)="addFavorites()"
+         class="favorite-profile-btn">
+      <img src="assets/img/icons/padd.png"></div>
+    <div *ngIf="user?.isAddFavorite" class="favorite-profile-btn" (click)="addFavorites()">
+      <img src="assets/img/icons/midd.png">
+    </div>
+    <div *ngIf="user.isAddLike == false" tappable (click)="addLike(user)" class="like-profile-btn"><img src="assets/img/icons/plike.png"></div>
+    <div *ngIf="user.isAddLike" class="disabled like-profile-btn"><img src="assets/img/icons/plike.png"></div>
+    <div (click)="toDialog(user)" tappable class="message-profile-btn"><img src="assets/img/icons/pmsgbot.png"></div>
+  </div>  <div (click)="goBack()" tappable class="close"><img alt="close" src="assets/img/icons/psclose.png"></div>
+  <ion-slides>
+    <ion-slide>
+      <div *ngIf="user?.mainImage?.url" tappable (click)="fullPagePhotos(user)" class="avatar"
+           [ngStyle]="{ 'background-image': 'url(' + user?.mainImage.url+ ')'}"></div>
+    </ion-slide>
+    <ion-slide *ngFor="let usr of user?.otherImages">
+      <div tappable (click)="fullPagePhotos(user)" class="avatar"
+           [ngStyle]="{ 'background-image': 'url(' + usr.url+ ')'}"></div>
+    </ion-slide>
+  </ion-slides>
+</ion-content>
+

@@ -1,0 +1,69 @@
+.select-value{
+  padding: 8px;
+  border-radius: 5px;
+  background: white;
+  width: 95%;
+  margin: 10px auto;
+  font-size: 16px;
+  position: relative;
+}
+.select-value:before{
+  content: "edit";
+  background: url(../img/edit.png) no-repeat;
+  background-size: 50% auto;
+  background-position: center;
+  width: 50px;
+  height: 100%;
+  position: absolute;
+  font-size: 0px;
+  bottom: 0px;
+  right: -8px;
+}
+.settings {
+  font-size: 25px;
+  color: white;
+  float: right;
+  margin-right: 30px;
+  clear: both;
+}
+
+#inbox {
+  background: url(../img/icons/inbox.png) center no-repeat;
+  width: 25px;
+  height: 25px;
+  background-size: contain;
+}
+
+#notifications {
+  background: url(../img/icons/notifications_ft.png) center no-repeat;
+  width: 23px;
+  height: 23px;
+  float: left;
+  background-size: contain;
+}
+
+
+#edit_photos {
+  background: url(../img/icons/edit_photos.png) center no-repeat;
+  width: 25px;
+  height: 25px;
+  background-size: contain;
+}
+
+#change_password {
+  background: url(../img/icons/change_password.png) center no-repeat;
+  width: 25px;
+  height: 25px;
+  background-size: contain;
+}
+
+#freeze_account {
+  background: url(../img/icons/freeze_account.png) center no-repeat;
+  width: 25px;
+  height: 25px;
+  background-size: contain;
+}
+
+.right {
+  float: right;
+}

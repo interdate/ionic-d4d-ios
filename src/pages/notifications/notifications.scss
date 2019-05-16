@@ -1,0 +1,28 @@
+page-notifications {
+   .bingo {
+      width: 65px;
+    }
+
+    .notifications {
+      width: 30px;
+    }
+
+   .segment-button.segment-activated,
+    .segment-md-secondary .segment-button.activated, .segment-md-secondary .segment-button.segment-activated,
+    .segment-ios-secondary .segment-button.activated, .segment-ios-secondary .segment-button.segment-activated{
+        border-color: transparent;
+        border-bottom-color: #DA6000;
+        background: transparent;
+    }
+
+  .segment-ios-secondary .segment-button {
+    border-color: transparent;
+  }
+
+  .segment-ios .segment-button {
+    height: 3.2em;
+  }
+  .card-ios{
+    min-height: 6px;
+  }
+}

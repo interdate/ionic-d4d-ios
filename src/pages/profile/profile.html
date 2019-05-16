@@ -1,0 +1,234 @@
+<!--
+  Generated template for the Profile page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar>
+        <ion-title>edit-profile</ion-title>
+    </ion-navbar>
+    <!--<ion-title><button></button><ion-icon name="arrow-round-back"></ion-icon></button></ion-title>-->
+</ion-header>
+<div tappable (click)="back()" class="back-btn">
+    <div>
+        <ion-icon name="ios-arrow-back"></ion-icon>
+    </div>
+</div>
+<div *ngIf="myId != user?.userId" class="profile-buttons">
+    <div *ngIf="user?.isAddFavorite == false" tappable (click)="addFavorites()"
+         class="favorite-profile-btn">
+        <img src="assets/img/icons/padd.png"></div>
+    <div *ngIf="user?.isAddFavorite" class="favorite-profile-btn" (click)="addFavorites()">
+        <img src="assets/img/icons/midd.png">
+    </div>
+    <div *ngIf="user?.isAddLike == false" tappable (click)="addLike(user)" class="like-profile-btn"><img
+            src="assets/img/icons/plike.png"></div>
+    <div *ngIf="user?.isAddLike" class="disabled like-profile-btn"><img src="assets/img/icons/plike.png"></div>
+    <div tappable (click)="toDialog(user)" class="message-profile-btn"><img src="assets/img/icons/pmsgbot.png"></div>
+</div>
+<ion-content>
+
+    <div>
+
+        <!--<div *ngIf="user?.photos">
+          <div (click)="fullPagePhotos(user)" class="avatar" [ngStyle]="{ 'background-image': 'url(' + api.url + user?.photos[0].url+ ')'}"></div>
+        </div>-->
+        <div class="photos">
+
+            <ion-slides pager="true">
+                <ion-slide>
+                    <div *ngIf="user?.mainImage?.url" tappable (click)="fullPagePhotos(user)" class="avatar"
+                         [ngStyle]="{ 'background-image': 'url(' + user?.mainImage.url+ ')'}"></div>
+                </ion-slide>
+                <ion-slide *ngFor="let usr of user?.otherImages">
+                    <div tappable (click)="fullPagePhotos(user)" class="avatar"
+                         [ngStyle]="{ 'background-image': 'url(' + usr.url+ ')'}"></div>
+                </ion-slide>
+            </ion-slides>
+        </div>
+        <div class="pmtitle">
+            <ion-icon *ngIf="user.isPaying == 1" class="paying" name="md-ribbon"></ion-icon>
+            <div *ngIf="user?.isNew == '1'" class="new-user"></div>
+            <div *ngIf="user?.isOnline == 1" class="online"></div>
+            <strong>{{user?.nickName}},</strong> {{user?.age}} <span>{{user?.region_name}}</span>
+        </div>
+
+        <div class="pmdetail cf">
+            <ul class="gen_info">
+                <li class="title">General Information</li>
+                <li>
+                    <div>NickName</div>
+                    <div>{{user?.nickName}}</div>
+                </li>
+                <li>
+                    <div>Age</div>
+                    <div>{{user?.age}}</div>
+                </li>
+                <li>
+                    <div>City</div>
+                    <div>{{user?.city}}</div>
+                </li>
+                <li>
+                    <div>Region</div>
+                    <div>{{user?.region}}</div>
+                </li>
+                <li>
+                    <div>Country</div>
+                    <div>{{user?.country}}</div>
+                </li>
+                <li>
+                    <div>Sexual Preference</div>
+                    <div>{{user?.sexPreference}}</div>
+                </li>
+            </ul>
+            <ul>
+                <li class="title">Background</li>
+                <li>
+                    <div>Relationship Status</div>
+                    <div>{{user?.maritalStatus}}</div>
+                </li>
+                <li>
+                    <div>Children</div>
+                    <div>{{user?.children}}</div>
+                </li>
+                <li>
+                    <div>My Ethnicity</div>
+                    <div>{{user?.ethnity}}</div>
+                </li>
+                <li>
+                    <div>My Region</div>
+                    <div>{{user?.religion}}</div>
+                </li>
+                <li>
+                    <div>My Education</div>
+                    <div>{{user?.education}}</div>
+                </li>
+                <li>
+                    <div>Country I was born in</div>
+                    <div>{{user?.country}}</div>
+                </li>
+                <li>
+                    <div>My Annual Income</div>
+                    <div>{{user?.income}}</div>
+                </li>
+                <li>
+                    <div>Occupation</div>
+                    <div>{{user?.occupation}}</div>
+                </li>
+                <li>
+                    <div>I speak</div>
+                    <div>{{user?.languageOptions}}</div>
+                </li>
+            </ul>
+            <ul>
+                <li class="title">Physical appearance</li>
+                <li>
+                    <div>Appearance</div>
+                    <div>{{user?.appearance}}</div>
+                </li>
+                <li>
+                    <div>Body Type</div>
+                    <div>{{user?.bodyType}}</div>
+                </li>
+                <li>
+                    <div>Height</div>
+                    <div>{{user?.height}}</div>
+                </li>
+                <li>
+                    <div>Weight</div>
+                    <div>{{user?.weight}}</div>
+                </li>
+                <li>
+                    <div>Hair color</div>
+                    <div>{{user?.hairColor}}</div>
+                </li>
+                <li>
+                    <div>Hair style</div>
+                    <div>{{user?.hairLength}}</div>
+                </li>
+                <li>
+                    <div>Eye color</div>
+                    <div>{{user?.eyesColor}}</div>
+                </li>
+            </ul>
+
+            <ul>
+                <li class="title">Personality And Interests</li>
+                <li>
+                    <div>Zodiac Sign</div>
+                    <div>{{user?.zodiac}}</div>
+                </li>
+                <li>
+                    <div>About Me</div>
+                    <div>{{user?.about}}</div>
+                </li>
+                <li>
+                    <div>Looking For</div>
+                    <div>{{user?.lookingFor}}</div>
+                </li>
+                <li>
+                    <div>My Hobbies</div>
+                    <div>{{user?.hobbies}}</div>
+                </li>
+                <li>
+                    <div>Drinking Habits</div>
+                    <div>{{user?.drinking}}</div>
+                </li>
+                <li>
+                    <div>Smoking Habits</div>
+                    <div>{{user?.smoking}}</div>
+                </li>
+            </ul>
+            <ul>
+                <li class="title">Disability Information</li>
+                <li>
+                    <div>My Life Challenge</div>
+                    <div>{{user?.disability}}</div>
+                </li>
+                <li>
+                    <div>Mobility</div>
+                    <div>{{user?.mobility}}</div>
+                </li>
+            </ul>
+        </div>
+        <div *ngIf="myId != user?.userId" class="pmtitle bottom">
+            <button (click)="reportAbuseShow()" color="orange" class="report-abuse" icon-left ion-button>
+                <ion-icon name="megaphone"></ion-icon>
+                Report Abuse
+            </button>
+            <button *ngIf="!user?.isBlackListed" (click)="blockSubmit()" color="orange" class="report-abuse" icon-left
+                    ion-button>
+                <ion-icon name="lock"></ion-icon>
+                Block
+            </button>
+            <button *ngIf="user?.isBlackListed" (click)="blockSubmit()" color="orange" class="report-abuse" icon-left
+                    ion-button>
+                <ion-icon name="unlock"></ion-icon>
+                Unlock
+            </button>
+        </div>
+
+        <div *ngIf="isAbuseOpen" class="abuse-form">
+            <ion-item>
+                <ion-textarea [(ngModel)]="formReportAbuse?.text.value" rows="3"></ion-textarea>
+            </ion-item>
+
+            <div class='btn-opt' padding>
+                <button class="cancel" color="danger" (click)="reportAbuseClose()" ion-button>
+                    Cancel
+                </button>
+                <button color="danger" (click)="abuseSubmit()" ion-button>Submit</button>
+            </div>
+        </div>
+        <div [ngClass]="{'pbb': api.banner && api.banner?.src != ''}"></div>
+    </div>
+</ion-content>
+<ion-footer>
+
+    <ion-navbar class="footerMenu">
+        <ion-title></ion-title>
+    </ion-navbar>
+
+</ion-footer>

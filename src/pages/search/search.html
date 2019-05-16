@@ -1,0 +1,62 @@
+<!--
+  Generated template for the Search page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar>
+        <ion-title>edit-profile</ion-title>
+    </ion-navbar>
+    <!--<ion-title><button></button><ion-icon name="arrow-round-back"></ion-icon></button></ion-title>-->
+</ion-header>
+
+<ion-content padding>
+    <ion-item tappable (click)="openSelect(form.country,'country')">
+        <ion-label>{{form.country.label}}
+            <div class="select-value">{{form.country.valLabel}}</div>
+        </ion-label>
+    </ion-item>
+    <ion-item tappable (click)="openSelect(form.region,'region')">
+        <ion-label>{{form.region.label}}
+            <div class="select-value">{{form.region.valLabel}}</div>
+        </ion-label>
+    </ion-item>
+    <ion-item tappable class="border-top" (click)="openSelect(form.ageFrom,'ageFrom')">
+        <ion-label>Age From
+            <div class="select-value">{{form.ageFrom.valLabel}}</div>
+        </ion-label>
+    </ion-item>
+    <ion-item tappable class="border-top" (click)="openSelect(form.ageTo,'ageTo')">
+        <ion-label>Age To
+            <div class="select-value">{{form.ageTo.valLabel}}</div>
+        </ion-label>
+    </ion-item>
+    <ion-item tappable (click)="openSelect(form.disability,'disability')">
+        <ion-label>Disability
+            <div class="select-value">{{form.disability.valLabel}}</div>
+        </ion-label>
+    </ion-item>
+    <ion-item>
+        <ion-input [(ngModel)]="form?.username.value" placeholder="Nickname:" type="text"></ion-input>
+    </ion-item>
+    <div>
+        <button full color="danger" tappable (click)="toSearchResultsPage()" class="search-1" ion-button>
+            Search
+        </button>
+    </div>
+    <div>
+        <button full color="danger" tappable (click)="toAdvancedSearch()" ion-button>
+            Go To Advanced Search
+        </button>
+    </div>
+    <div [ngClass]="{'pbb': api.banner && api.banner?.src != ''}"></div>
+</ion-content>
+<ion-footer>
+
+    <ion-navbar class="footerMenu">
+        <ion-title></ion-title>
+    </ion-navbar>
+
+</ion-footer>

@@ -1,0 +1,154 @@
+page-profile {
+
+  .profile {
+    background-position: center;
+    background-size: 100%;
+    width: 100%;
+    height: 300px;
+  }
+
+  .pmtitle {
+    position: relative;
+    background: #e9e8e5;
+    padding: 9px 10px 6px 40px;
+    font-size: 21px;
+  }
+  .pmtitle span {
+    font-size: 14px;
+    display: block;
+  }
+
+
+  .pmdetail ul {
+    margin: 0;
+  }
+
+  .pmdetail li {
+    padding: 5px;
+    overflow: hidden;
+
+  }
+
+  .pmdetail li div:nth-child(odd), .pmdetail .title {
+    font-weight: 500;
+  }
+
+  .pmdetail li div {
+    width: 50%;
+    float: left;
+  }
+
+  .pmbotul {
+    font-size: 12px;
+  }
+  .pmbotul li .one {
+    font-weight: bold;
+    width: 115px;
+    display: inline-block;
+  }
+  .pmbotul li {
+    margin-bottom: 5px;
+  }
+
+  .pmtitle.bottom span {
+    display: inline;
+    font-size: 12px;
+  }
+  .btn-opt {
+    text-align: center;
+  }
+
+  .pmtitle.bottom {
+    text-align: center;
+    padding: 9px 10px 25px 10px;
+  }
+
+  .pmtitle.bottom span ion-icon {
+    margin-right: 5px;
+  }
+
+  .pmtitle button {
+    width: 47%
+  }
+
+  li {
+    list-style-type: none;
+  }
+
+  .pmdetail {
+    background: #fff;
+    padding: 0 10px;
+  }
+
+  .title {
+    background-color: #e9e8e5;
+    margin-top: 10px;
+  }
+
+  .content-md, .content-ios {
+    background-color: #fff;
+  }
+
+  .pbot_con {
+    float: right;
+  }
+
+  .new-user {
+    background: url(../assets/img/icons/new.png) no-repeat;
+    width: 26px;
+    height: 26px;
+    position: absolute;
+    background-size: cover;
+    right: 48px;
+    top: 7px;
+    z-index: 999;
+  }
+
+  .paying {
+    color: #fc5b04;
+    position: absolute;
+    font-size: 30px;
+    right: 14px;
+    top: 4px;
+    z-index: 999;
+  }
+
+  .online {
+    left: 16px;
+    top: 14px;
+    height: 12px;
+    width: 12px;
+    background-color: #45d362;
+    position: absolute;
+    border-radius: 100%;
+  }
+
+  .profile-buttons .favorite-profile-btn,
+  .profile-buttons .like-profile-btn,
+  .profile-buttons .message-profile-btn {
+    background: rgba(233, 232, 229, 0.5);
+    width: 49px;
+    height: 49px;
+    margin-bottom: 5px;
+    border-radius: 50%;
+    border: 1px solid rgba(1,1,1,.5)
+  }
+
+  .favorite-profile-btn img {
+    margin: 10px 6px;
+    max-width: 75%;
+  }
+
+  .message-profile-btn img {
+    width: 74%;
+    margin: 8px 3px;
+  }
+
+  .like-profile-btn img {
+    width: 70%;
+    margin-left: 5px;
+    margin-top: 4px;
+  }
+
+
+}

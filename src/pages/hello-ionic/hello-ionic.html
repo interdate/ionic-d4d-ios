@@ -1,0 +1,78 @@
+<ion-header>
+
+  <ion-navbar>
+    </ion-navbar>
+  <!--<ion-title><button></button><ion-icon name="arrow-round-back"></ion-icon></button></ion-title>-->
+</ion-header>
+<div *ngIf="(get_params.action == 'online' && get_params.list===undefined) || (get_params.action == 'online' && get_params.list == 'distance') || (get_params.action != 'online')" tappable (click)="back()" class="back-btn">
+  <div>
+    <ion-icon name="ios-arrow-back"></ion-icon>
+  </div>
+</div>
+
+<ion-content class="has-header page-hello-ionic">
+  <div class="no_results" *ngIf="user_counter == 0">No Results</div>
+  <ion-list>
+      <ion-card class="usr_profile" ion-item *ngFor="let user of users">
+      <div class="user-section">
+        <div *ngIf="user.isOnline == 1" class="online"></div>
+        <div *ngIf="user.isNew == 1" class="new-user"></div>
+        <ion-icon *ngIf="user.isPaying == 1" class="paying" name="md-ribbon"></ion-icon>
+        <div tappable (click)="itemTapped(user)" [ngStyle]="{ 'background-image': 'url(' + user.mainImage?.url + ')'}" class="avatar"></div>
+        <div class="wrap">
+          <ion-card-title tappable (click)="itemTapped(user)">
+            <div class="name">{{user.nickName}}, {{user.age}}</div>
+            <div class="location">{{user.country}}, <br> {{user.city}}</div><div class="distance">{{user.distance}}</div>
+          </ion-card-title>
+          <ul class="profile-btn">
+              <div class="btn" tappable (click)=toDialog(user)>
+                <li id="mobmsg"></li>
+                <div>Message</div>
+              </div>
+            <div class="btn" [ngClass]="{'disabled': user.isAddLike }" tappable (click)="addLike(user)">
+            <!--Message-->
+            <li id="like-red"></li>
+              <div>Like</div>
+              <!--Like-->
+              </div>
+            <div *ngIf="!blocked_img && !user.isAddFavorite" class="btn" tappable (click)=addFavorites(user)>
+              <li id="add-green"></li>
+              <div>Add</div>
+            </div>
+
+            <div *ngIf="!blocked_img && user.isAddFavorite" class="btn" tappable (click)=addFavorites(user)>
+              <li id="rm-fav"></li>
+              <div>Remove</div>
+            </div>
+
+            <div *ngIf="params.list == 'friends'" class="btn blocked" tappable (click)=block(user,true)>
+              <li id="cap"></li>
+              <div>Remove</div>
+            </div>
+
+            <div *ngIf="params.list == 'blackList'" class="btn blocked" tappable (click)=block(user,false)>
+              <li id="cap"></li>
+              <div>unblock</div>
+            </div>
+
+            <!--Add-->
+        </ul>
+        <div class="clr"></div>
+      </div>
+    </div>
+    </ion-card>
+  </ion-list>
+  <div *ngIf="loader == true" class="loader"><img src="assets/img/loader.gif"></div>
+  <ion-infinite-scroll #scroll threshold="90%" (ionInfinite)="moreUsers($event)">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+  <div [ngClass]="{'pbb': api.banner && api.banner?.src != ''}"></div>
+</ion-content>
+<ion-footer>
+
+<ion-navbar>
+  <ion-title></ion-title>
+</ion-navbar>
+
+</ion-footer>
+

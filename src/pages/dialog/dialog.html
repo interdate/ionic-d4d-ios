@@ -1,0 +1,68 @@
+<!--
+  Generated template for the Dialog page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar>
+        <ion-title>edit-profile</ion-title>
+    </ion-navbar>
+</ion-header>
+<div tappable (click)="back()" class="back-btn">
+    <div>
+        <ion-icon name="ios-arrow-back"></ion-icon>
+    </div>
+</div>
+<ion-content padding-top>
+        <ion-card>
+            <ion-item>
+
+                <p class="dialog-avatar" *ngIf="user?.mainImage?.url" tappable (click)="toProfilePage()"
+                   [ngStyle]="{ 'background-image': 'url(' +user?.mainImage?.url + ')'}">Chat With {{user.nickName}}</p>
+
+            </ion-item>
+            <p></p>
+        </ion-card>
+        <div class="messages">
+            <ion-card [ngClass]="{'other-msg': reciver_id == msg?.from }" *ngFor="let msg of messages"
+                      class="usr_msg msg-item">
+                <ion-grid>
+                    <ion-row>
+                        <ion-col width-100>
+                            <ion-card-content item-left>
+                            <span *ngIf="msg.text == 'Click here to buy subscription or use your free point to read this message'">
+                            Click here to <a tappable (click)=subscription()>buy subscription</a></span><span
+                                    *ngIf="userHasFreePoints && msg.text == 'Click here to buy subscription or use your free point to read this message'"> or
+                            use your  <a tappable (click)=useFreePointToReadMessage(msg)>free point</a> to read this message</span>
+                            </ion-card-content>
+                            <ion-card-content
+                                    *ngIf="msg.text != 'Click here to buy subscription or use your free point to read this message'"
+                                    [innerHTML]="msg.text" item-left>
+                            </ion-card-content>
+                        </ion-col>
+                        <ion-col class="time-sent">
+                            <ion-card-content class="date" item-right>
+                                {{msg.date}}<br> {{msg.time}}
+                                <ion-icon *ngIf="reciver_id != msg.from && msg.isRead == '0'"
+                                          name="done-all"></ion-icon>
+                                <ion-icon class="received" *ngIf="reciver_id != msg.from && msg.isRead == '1'"
+                                          name="done-all"></ion-icon>
+                                <ion-icon *ngIf="reciver_id != msg.from && msg.isRead =='2'"
+                                          name="checkmark"></ion-icon>
+                            </ion-card-content>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+            </ion-card>
+        </div>
+
+</ion-content>
+
+<ion-footer>
+    <ion-toolbar id="form-dialog">
+        <ion-textarea id="dialog-msg" [(ngModel)]="message" placeholder="" item-left></ion-textarea>
+        <button class="send-msg" (click)="sendMessage()" ion-button color="danger">send</button>
+    </ion-toolbar>
+</ion-footer>

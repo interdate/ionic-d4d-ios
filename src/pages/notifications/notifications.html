@@ -1,0 +1,86 @@
+<!--
+  Generated template for the Notifications page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+
+<ion-header>
+
+    <ion-navbar>
+        <ion-title>edit-profile</ion-title>
+    </ion-navbar>
+    <!--<ion-title><button></button><ion-icon name="arrow-round-back"></ion-icon></button></ion-title>-->
+</ion-header>
+<ion-content padding>
+    <div padding> This is the palce where you can learn who liked your photo.<br>
+        If someone you like likes you back - both of you will receive a Bingo! notification
+    </div>
+
+    <ion-segment [(ngModel)]="tabs" color="secondary">
+        <ion-segment-button value="{{ like }}">
+            <img class="notifications" src="assets/img/icons/like-red.png">
+        </ion-segment-button>
+        <ion-segment-button value="{{ bingo }}">
+            <img class="bingo" src="https://dating4disabled.com/assets/frontend/images/bingo.png">
+        </ion-segment-button>
+    </ion-segment>
+
+    <div class="no_results" *ngIf="users?.length == 0">No Results</div>
+    <div [ngSwitch]="tabs">
+        <div *ngSwitchCase="like">
+            <div *ngFor="let user of users">
+                <ion-card [ngClass]="{'grey': user.isRead == 0}" tappable (click)=toDialog(user) *ngIf="user.bingo == 0">
+                    <ion-card-content>
+                        <div class="usr_img"
+                             [ngStyle]="{ 'background-image': 'url(' + imagePath + '/' + user.imageId +'.' + user.imageExt +')'}"></div>
+                        <ion-card-title>
+                            <div class="name">{{user.nickName}}</div>
+                            <div class="date">{{user.date.split(' ')[0] | date: "MM/dd/yyyy"}}</div>
+                        </ion-card-title>
+                        <p>
+                            {{user.template.replace('[USERNICK]',user.nickName)}}
+                        </p>
+                    </ion-card-content>
+                </ion-card>
+            </div>
+            <div  *ngIf="api.banner && api.banner?.src != ''">
+                <ion-card tappable>
+                </ion-card>
+            </div>
+        </div>
+
+        <div *ngSwitchCase="bingo">
+            <div *ngFor="let user of users">
+                <ion-card [ngClass]="{'grey': user.isRead == 0 }" tappable (click)=toDialog(user) *ngIf="user.bingo == 1">
+                    <ion-card-content>
+                        <div class="usr_img"
+                             [ngStyle]="{ 'background-image': 'url(' + imagePath + '/' + user.imageId +'.' + user.imageExt +')'}"></div>
+                        <ion-card-title>
+                            <div class="name">{{user.nickName}}</div>
+                            <div class="date">{{user.date.split(' ')[0] | date: "MM/dd/yyyy"}}</div>
+                        </ion-card-title>
+                        <p>
+                            {{user.template.replace('[USERNICK]',user.nickName)}}
+                        </p>
+                        <div *ngIf="user.bingo" class="bingoimg"><img alt="bingo" src="https://dating4disabled.com/assets/frontend/images/bingo.png"></div>
+                    </ion-card-content>
+                </ion-card>
+            </div>
+            <div  *ngIf="api.banner && api.banner?.src != ''">
+                <ion-card tappable>
+                </ion-card>
+            </div>
+
+        </div>
+    </div>
+
+</ion-content>
+<ion-footer>
+
+    <ion-navbar>
+        <ion-title></ion-title>
+    </ion-navbar>
+
+</ion-footer>

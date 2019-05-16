@@ -1,0 +1,410 @@
+<!--
+  Generated template for the EditProfile page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar>
+        <ion-title>edit-profile</ion-title>
+    </ion-navbar>
+    <!--<ion-title><button></button><ion-icon name="arrow-round-back"></ion-icon></button></ion-title>-->
+</ion-header>
+
+<button ion-button icon-only color="danger">
+    <ion-icon name="arrow-round-back"></ion-icon>
+</button>
+
+<ion-content>
+    <div *ngIf="form">
+    <div class="inner_form_top">
+        <ul>
+            <li [ngClass]="{'active': form.step.value == 1 }" tappable (click)="back()" ><span class="fnumber profileSpan">1</span><span class="ftext"></span></li>
+            <li [ngClass]="{'active': form.step.value == 2 }"><span class="fnumber profileSpan">2</span></li>
+            <li><span class="fnumber profileSpan">3</span></li>
+        </ul>
+        <div class="clr"></div>
+    </div>
+    <ion-list *ngIf="form.step.value == 1">
+        <div class="input text">
+            <div [ngClass]="{'yellow-bg':  error.userEmail }"
+                 class="placeholder">{{form.userEmail.label}}
+            </div>
+            <ion-item>
+                <ion-input type="text" [(ngModel)]="form.userEmail.value"></ion-input>
+            </ion-item>
+            <div class="err">{{error.userEmail}}</div>
+        </div>
+        <div class="input text">
+            <div [ngClass]="{'yellow-bg':  error.userPass }"
+                 class="placeholder">{{form.userPass.label}}
+            </div>
+            <ion-item>
+                <ion-input type="password" [(ngModel)]="form.userPass.value"></ion-input>
+            </ion-item>
+            <div class="err">{{error.userPass}}</div>
+        </div>
+
+        <div class="input text">
+            <div [ngClass]="{'yellow-bg':  error.userPass2 }"
+                 class="placeholder">{{form.userPass2.label}}
+            </div>
+            <ion-item>
+                <ion-input type="password" [(ngModel)]="form.userPass2.value"></ion-input>
+            </ion-item>
+            <div class="err">{{error.userPass2}}</div>
+        </div>
+
+        <div class="input text">
+            <div [ngClass]="{'yellow-bg':  error.userNick }"
+                 class="placeholder">{{form.userNick.label}}
+            </div>
+            <ion-item>
+                <ion-input type="text" [(ngModel)]="form.userNick.value">
+                </ion-input>
+            </ion-item>
+            <div class="err">{{error.userNick}}</div>
+        </div>
+
+        <div class="input" tappable (click)="openSelect(form.userGender,'userGender')" [ngClass]="{'error': error.userGender}">
+            <div [ngClass]="{'yellow-bg':  error.userGender }" class="placeholder">{{form.userGender.label}}
+            </div>
+            <ion-item>
+                <div class="select-value">{{form.userGender.valLabel}}</div>
+            </ion-item>
+            <div class="err">{{error.userGender}}</div>
+        </div>
+
+        <div class="input" tappable (click)="openSelect(form.sexPrefId,'sexPrefId')" [ngClass]="{'error': error.sexPrefId}">
+            <div [ngClass]="{'yellow-bg':  error.sexPrefId }" class="placeholder">{{form.sexPrefId.label}}
+            </div>
+            <ion-item>
+                <div class="select-value">{{form.sexPrefId.valLabel}}</div>
+            </ion-item>
+            <div class="err">{{error.sexPrefId}}</div>
+        </div>
+
+        <div class="input text">
+            <div [ngClass]="{'yellow-bg':  error.userBirthday }" class="placeholder">{{form.userBirthday.label}}</div>
+            <ion-item>
+                <ion-datetime [(ngModel)]="birth" displayFormat="MMM DD YYYY" max="1999"
+                              pickerFormat="MM DD YYYY"></ion-datetime>
+            </ion-item>
+            <div class="err">{{error.userBirthday}}</div>
+        </div>
+
+        <div class="input" tappable (click)="openSelect(form.countryCode,'countryCode')" [ngClass]="{'error': error.countryCode}">
+            <div [ngClass]="{'yellow-bg':  error.countryCode }" class="placeholder">{{form.countryCode.label}}
+            </div>
+            <ion-item>
+                <div class="select-value">{{form.countryCode.valLabel}}</div>
+            </ion-item>
+            <div *ngIf="error.countryCode" class="err">{{error.countryCode}}</div>
+        </div>
+        <div tappable *ngIf="form.regionCode && form.regionCode.label" class="input" (click)="openSelect(form.regionCode,'regionCode')" [ngClass]="{'error': error.regionCode}">
+            <div [ngClass]="{'yellow-bg':  error.regionCode }" class="placeholder">{{form.regionCode.label}}
+            </div>
+            <ion-item>
+                <div class="select-value">{{form.regionCode.valLabel}}</div>
+            </ion-item>
+            <div *ngIf="error.regionCode" class="err">{{error.regionCode}}</div>
+        </div>
+        <div *ngIf="form.zipCode && form.zipCode.label" class="input text">
+            <div [ngClass]="{'yellow-bg':  error.zipCode }"
+                 class="placeholder">{{form.zipCode.label}}
+            </div>
+            <ion-item>
+                <ion-input type="text" [(ngModel)]="form.zipCode.value"></ion-input>
+            </ion-item>
+            <div *ngIf="error.zipCode" class="err">{{error.zipCode}}</div>
+        </div>
+        <div *ngIf="form.userCityName && form.userCityName.label" class="input text">
+            <div [ngClass]="{'yellow-bg':  error.userCityName }"
+                 class="placeholder">{{form.userCityName.label}}
+            </div>
+            <ion-item>
+                <ion-input type="text" [(ngModel)]="form.userCityName.value"></ion-input>
+            </ion-item>
+            <div *ngIf="error.userCityName" class="err">{{error.userCityName}}</div>
+        </div>
+        <div class="input" tappable (click)="openSelect(form.countryOfOriginCode,'countryOfOriginCode')" [ngClass]="{'error': error.countryOfOriginCode}">
+            <div [ngClass]="{'yellow-bg':  error.countryOfOriginCode }" class="placeholder">
+                {{form.countryOfOriginCode.label}}
+            </div>
+            <ion-item>
+                <div class="select-value">{{form.countryOfOriginCode.valLabel}}</div>
+            </ion-item>
+            <div *ngIf="error.countryOfOriginCode" class="err">{{error.countryOfOriginCode}}</div>
+        </div>
+
+        <div [ngClass]="{'yellow-bg':  error.agree }">
+            <div [innerHTML]="" class="value agree">I confirm that I have read and agreed to the <a
+                    tappable (click)="getTermsAndConditions()">Terms and Conditions</a> of Service of membership at
+                Dating4disabled.com.
+            </div>
+            <div class="input agree">
+                <ion-item>
+                    <ion-checkbox checked="true" color="danger" [(ngModel)]="form.agree.value"></ion-checkbox>
+                </ion-item>
+            </div>
+            <div *ngIf="error.agree" class="err">{{error.agree}}</div>
+        </div>
+        <div class="err" *ngIf="texts.errText">{{texts.errText}}</div>
+        <div class="save">
+            <button tappable right color="danger" (click)="formSubmit()" full ion-button>Next Step
+            </button>
+        </div>
+    </ion-list>
+
+    <!----------------------- STEP 2 -------------------------------->
+
+    <ion-list *ngIf="form.step.value == 2">
+        <div class="input text">
+            <div [ngClass]="{'yellow-bg':  error.userfName }"
+                 class="placeholder">{{form.userfName.label}}
+            </div>
+            <ion-item>
+                <ion-input type="text" [(ngModel)]="form.userfName.value"></ion-input>
+            </ion-item>
+            <div class="err">{{error.userfName}}</div>
+        </div>
+        <div class="input text">
+            <div [ngClass]="{'yellow-bg':  error.userlName }"
+                 class="placeholder">{{form.userlName.label}}
+            </div>
+            <ion-item>
+                <ion-input type="text" [(ngModel)]="form.userlName.value"></ion-input>
+            </ion-item>
+            <div class="err">{{error.userlName}}</div>
+        </div>
+        <div class="input" tappable (click)="openSelect(form.maritalStatusId,'maritalStatusId')" [ngClass]="{'error': error.maritalStatusId}">
+            <div [ngClass]="{'yellow-bg':  error.maritalStatusId }" class="placeholder">{{form.maritalStatusId.label}}
+            </div>
+            <ion-item>
+                <div class="select-value">{{form.maritalStatusId.valLabel}}</div>
+            </ion-item>
+            <div *ngIf="error.maritalStatusId" class="err">{{error.maritalStatusId}}</div>
+        </div>
+        <div class="input" tappable (click)="openSelect(form.userChildren,'userChildren')" [ngClass]="{'error': error.userChildren}">
+            <div [ngClass]="{'yellow-bg':  error.userChildren }" class="placeholder">{{form.userChildren.label}}
+            </div>
+            <ion-item>
+                <div class="select-value">{{form.userChildren.valLabel}}</div>
+            </ion-item>
+            <div *ngIf="error.userChildren" class="err">{{error.userChildren}}</div>
+        </div>
+        <div class="input" tappable (click)="openSelect(form.ethnicOriginId,'ethnicOriginId')" [ngClass]="{'error': error.ethnicOriginId}">
+            <div [ngClass]="{'yellow-bg':  error.ethnicOriginId }" class="placeholder">{{form.ethnicOriginId.label}}
+            </div>
+            <ion-item>
+                <div class="select-value">{{form.ethnicOriginId.valLabel}}</div>
+            </ion-item>
+            <div *ngIf="error.ethnicOriginId" class="err">{{error.ethnicOriginId}}</div>
+        </div>
+        <div class="input" tappable (click)="openSelect(form.religionId,'religionId')" [ngClass]="{'error': error.religionId}">
+            <div [ngClass]="{'yellow-bg':  error.religionId }" class="placeholder">{{form.religionId.label}}
+            </div>
+            <ion-item>
+                <div class="select-value">{{form.religionId.valLabel}}</div>
+            </ion-item>
+            <div *ngIf="error.religionId" class="err">{{error.religionId}}</div>
+        </div>
+        <div class="input" tappable (click)="openSelect(form.educationId,'educationId')" [ngClass]="{'error': error.educationId}">
+            <div [ngClass]="{'yellow-bg':  error.educationId }" class="placeholder">{{form.educationId.label}}
+            </div>
+            <ion-item>
+                <div class="select-value">{{form.educationId.valLabel}}</div>
+            </ion-item>
+            <div *ngIf="error.educationId" class="err">{{error.educationId}}</div>
+        </div>
+        <div class="input" tappable (click)="openSelect(form.occupationId,'occupationId')" [ngClass]="{'error': error.occupationId}">
+            <div [ngClass]="{'yellow-bg':  error.occupationId }" class="placeholder">{{form.occupationId.label}}
+            </div>
+            <ion-item>
+                <div class="select-value">{{form.occupationId.valLabel}}</div>
+            </ion-item>
+            <div *ngIf="error.occupationId" class="err">{{error.occupationId}}</div>
+        </div>
+        <div class="input" tappable (click)="openSelect(form.incomeId,'incomeId')" [ngClass]="{'error': error.incomeId}">
+            <div [ngClass]="{'yellow-bg':  error.incomeId }" class="placeholder">{{form.incomeId.label}}
+            </div>
+            <ion-item>
+                <div class="select-value">{{form.incomeId.valLabel}}</div>
+            </ion-item>
+            <div *ngIf="error.incomeId" class="err">{{error.incomeId}}</div>
+        </div>
+        <div class="input">
+            <div [ngClass]="{'yellow-bg':  error.languageId }" class="placeholder">{{form.languageId.label}}
+            </div>
+            <ion-item>
+                <ion-select item-content interface="action-sheet" multiple="true" [(ngModel)]="form.languageId.value">
+                    <ion-option value="{{languageId.value}}" *ngFor="let languageId of form.languageId.choices">
+                        {{languageId.label}}
+                    </ion-option>
+                </ion-select>
+            </ion-item>
+            <div *ngIf="error.languageId" class="err">{{error.languageId}}</div>
+        </div>
+        <div class="input" tappable (click)="openSelect(form.appearanceId,'appearanceId')" [ngClass]="{'error': error.appearanceId}">
+            <div [ngClass]="{'yellow-bg':  error.appearanceId }" class="placeholder">{{form.appearanceId.label}}
+            </div>
+            <ion-item>
+                <div class="select-value">{{form.appearanceId.valLabel}}</div>
+            </ion-item>
+            <div *ngIf="error.appearanceId" class="err">{{error.appearanceId}}</div>
+        </div>
+        <div class="input" tappable (click)="openSelect(form.bodyTypeId,'bodyTypeId')" [ngClass]="{'error': error.bodyTypeId}">
+            <div [ngClass]="{'yellow-bg':  error.bodyTypeId }" class="placeholder">{{form.bodyTypeId.label}}
+            </div>
+            <ion-item>
+                <div class="select-value">{{form.bodyTypeId.valLabel}}</div>
+            </ion-item>
+            <div *ngIf="error.bodyTypeId" class="err">{{error.bodyTypeId}}</div>
+        </div>
+        <div class="input" tappable (click)="openSelect(form.userHight,'userHight')" [ngClass]="{'error': error.userHight}">
+            <div [ngClass]="{'yellow-bg':  error.userHight }" class="placeholder">{{form.userHight.label}}
+            </div>
+            <ion-item>
+                <div class="select-value">{{form.userHight.valLabel}}</div>
+            </ion-item>
+            <div *ngIf="error.userHight" class="err">{{error.userHight}}</div>
+        </div>
+        <div class="input" tappable (click)="openSelect(form.userWeight,'userWeight')" [ngClass]="{'error': error.userWeight}">
+            <div [ngClass]="{'yellow-bg':  error.userWeight }" class="placeholder">{{form.userWeight.label}}
+            </div>
+            <ion-item>
+                <div class="select-value">{{form.userWeight.valLabel}}</div>
+            </ion-item>
+            <div *ngIf="error.userWeight" class="err">{{error.userWeight}}</div>
+        </div>
+        <div class="input" tappable (click)="openSelect(form.hairLengthId,'hairLengthId')" [ngClass]="{'error': error.hairLengthId}">
+            <div [ngClass]="{'yellow-bg':  error.hairLengthId }" class="placeholder">{{form.hairLengthId.label}}
+            </div>
+            <ion-item>
+                <div class="select-value">{{form.hairLengthId.valLabel}}</div>
+            </ion-item>
+            <div *ngIf="error.hairLengthId" class="err">{{error.hairLengthId}}</div>
+        </div>
+        <div class="input" tappable (click)="openSelect(form.hairColorId,'hairColorId')" [ngClass]="{'error': error.hairColorId}">
+            <div [ngClass]="{'yellow-bg':  error.hairColorId }" class="placeholder">{{form.hairColorId.label}}
+            </div>
+            <ion-item>
+                <div class="select-value">{{form.hairColorId.valLabel}}</div>
+            </ion-item>
+            <div *ngIf="error.hairColorId" class="err">{{error.hairColorId}}</div>
+        </div>
+        <div class="input" tappable (click)="openSelect(form.eyesColorId,'eyesColorId')" [ngClass]="{'error': error.eyesColorId}">
+            <div [ngClass]="{'yellow-bg':  error.eyesColorId }" class="placeholder">{{form.eyesColorId.label}}
+            </div>
+            <ion-item>
+                <div class="select-value">{{form.eyesColorId.valLabel}}</div>
+            </ion-item>
+            <div *ngIf="error.eyesColorId" class="err">{{error.eyesColorId}}</div>
+        </div>
+        <div class="input" tappable (click)="openSelect(form.smokingId,'smokingId')" [ngClass]="{'error': error.smokingId}">
+            <div [ngClass]="{'yellow-bg':  error.smokingId }" class="placeholder">{{form.smokingId.label}}
+            </div>
+            <ion-item>
+                <div class="select-value">{{form.smokingId.valLabel}}</div>
+            </ion-item>
+            <div *ngIf="error.smokingId" class="err">{{error.smokingId}}</div>
+        </div>
+        <div class="input" tappable (click)="openSelect(form.drinkingId,'drinkingId')" [ngClass]="{'error': error.drinkingId}">
+            <div [ngClass]="{'yellow-bg':  error.drinkingId }" class="placeholder">{{form.drinkingId.label}}
+            </div>
+            <ion-item>
+                <div class="select-value">{{form.drinkingId.valLabel}}</div>
+            </ion-item>
+            <div *ngIf="error.drinkingId" class="err">{{error.drinkingId}}</div>
+        </div>
+
+        <div class="input text">
+            <div [ngClass]="{'yellow-bg':  error.userHobbies }"
+                 class="placeholder">{{form.userHobbies.label}}
+            </div>
+            <ion-item>
+                <ion-input type="text" [(ngModel)]="form.userHobbies.value"></ion-input>
+            </ion-item>
+            <div class="err">{{error.userHobbies}}</div>
+        </div>
+        <div class="input">
+            <div [ngClass]="{'yellow-bg':  error.userAboutMe }" class="placeholder" [innerHTML]="form.userAboutMe.label"></div>
+            <ion-item>
+                <ion-textarea [(ngModel)]="form.userAboutMe.value" rows="8" >{{ form.userAboutMe.value }}</ion-textarea>
+            </ion-item>
+            <div *ngIf="error.userAboutMe" class="err">{{error.userAboutMe}}</div>
+        </div>
+
+        <div class="input">
+            <div [ngClass]="{'yellow-bg':  error.userLookingFor }" class="placeholder" [innerHTML]="form.userLookingFor.label"></div>
+            <ion-item>
+                <ion-textarea [(ngModel)]="form.userLookingFor.value" rows="8" >{{ form.userLookingFor.value }}</ion-textarea>
+            </ion-item>
+            <div *ngIf="error.userLookingFor" class="err">{{error.userLookingFor}}</div>
+        </div>
+
+        <div class="input">
+            <div [ngClass]="{'yellow-bg':  error.hobbyIds }" class="placeholder">{{form.hobbyIds.label}}
+            </div>
+            <ion-item>
+                <ion-select multiple="true" item-content interface="action-sheet" [(ngModel)]="form.hobbyIds.value">
+                    <ion-option value="{{hobbyIds.value}}" *ngFor="let hobbyIds of form.hobbyIds.choices">
+                        {{hobbyIds.label}}
+                    </ion-option>
+                </ion-select>
+            </ion-item>
+            <div *ngIf="error.hobbyIds" class="err">{{error.hobbyIds}}</div>
+        </div>
+
+        <div class="input">
+            <div [ngClass]="{'yellow-bg':  error.characteristicIds }" class="placeholder">{{form.characteristicIds.label}}
+            </div>
+            <ion-item>
+                <ion-select item-content interface="action-sheet" [(ngModel)]="form.characteristicIds.value" multiple="true">
+                    <ion-option value="{{characteristicIds.value}}"
+                                *ngFor="let characteristicIds of form.characteristicIds.choices">
+                        {{characteristicIds.label}}
+                    </ion-option>
+                </ion-select>
+            </ion-item>
+            <div *ngIf="error.characteristicIds" class="err">{{error.characteristicIds}}</div>
+        </div>
+        <div class="input">
+            <div [ngClass]="{'yellow-bg':  error.lookingForIds }" class="placeholder">{{form.lookingForIds.label}}
+            </div>
+            <ion-item>
+                <ion-select item-content interface="action-sheet" [(ngModel)]="form.lookingForIds.value" multiple="true">
+                    <ion-option value="{{lookingForIds.value}}"
+                                *ngFor="let lookingForIds of form.lookingForIds.choices">
+                        {{lookingForIds.label}}
+                    </ion-option>
+                </ion-select>
+            </ion-item>
+            <div *ngIf="error.lookingForIds" class="err">{{error.lookingForIds}}</div>
+        </div>
+        <div class="input" tappable (click)="openSelect(form.healthId,'healthId')" [ngClass]="{'error': error.healthId}">
+            <div [ngClass]="{'yellow-bg':  error.healthId }" class="placeholder">{{form.healthId.label}}
+            </div>
+            <ion-item>
+                <div class="select-value">{{form.healthId.valLabel}}</div>
+            </ion-item>
+            <div *ngIf="error.healthId" class="err">{{error.healthId}}</div>
+        </div>
+        <div class="input" tappable (click)="openSelect(form.mobilityId,'mobilityId')" [ngClass]="{'error': error.mobilityId}">
+            <div [ngClass]="{'yellow-bg':  error.mobilityId }" class="placeholder">{{form.mobilityId.label}}
+            </div>
+            <ion-item>
+                <div class="select-value">{{form.mobilityId.valLabel}}</div>
+            </ion-item>
+            <div *ngIf="error.mobilityId" class="err">{{error.mobilityId}}</div>
+        </div>
+        <div class="err" *ngIf="texts.errText">{{texts.errText}}</div>
+        <div class="save">
+            <button right color="danger" tappable (click)="formSubmit()" full ion-button>Next Step
+            </button>
+        </div>
+    </ion-list>
+    </div>
+</ion-content>
+
