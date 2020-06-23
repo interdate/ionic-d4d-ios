@@ -5,6 +5,7 @@ import {ApiQuery} from '../../library/api-query';
 import {HelloIonicPage} from '../hello-ionic/hello-ionic';
 import {PagePage} from '../page/page';
 import set = Reflect.set;
+import {LoginPage} from "../login/login";
 /*
  Generated class for the ChangePhotos page.
 
@@ -271,9 +272,8 @@ export class ChangePhotosPage {
             text: this.texts.reg_success,
             status: 'not_activated'
         };
+      this.navCtrl.push(LoginPage, {page: {_id: 'logout'}});
 
-
-        this.navCtrl.push(HelloIonicPage);
     }
 
     ionViewWillEnter() {

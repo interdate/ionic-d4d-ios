@@ -1,0 +1,83 @@
+{
+  "project_info": {
+    "project_number": "95543012588",
+    "firebase_url": "https://dating4disabled-1307.firebaseio.com",
+    "project_id": "dating4disabled-1307",
+    "storage_bucket": "dating4disabled-1307.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:95543012588:android:f04d2c32698fd8b2",
+        "android_client_info": {
+          "package_name": "interdate.d4d"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "95543012588-7q6gt9qgegmts0hpnpv5tcosdkeslpq3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCh99dSDo0KoUJfmSPR-jBfNS8o2inBKvg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "95543012588-7q6gt9qgegmts0hpnpv5tcosdkeslpq3.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "95543012588-9anmmnb29767lolqqvqoj7uqqnfbm06i.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.interdate-ltd.dating4disabled"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:95543012588:android:30f0fb0e01793cd48d89c9",
+        "android_client_info": {
+          "package_name": "interdate.dating_4_disabled"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "95543012588-7q6gt9qgegmts0hpnpv5tcosdkeslpq3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCh99dSDo0KoUJfmSPR-jBfNS8o2inBKvg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "95543012588-7q6gt9qgegmts0hpnpv5tcosdkeslpq3.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "95543012588-9anmmnb29767lolqqvqoj7uqqnfbm06i.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.interdate-ltd.dating4disabled"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -34,7 +34,6 @@ import {StatusBar} from "@ionic-native/status-bar";
 import {Device} from "@ionic-native/device";
 import {ImagePicker} from "@ionic-native/image-picker";
 import {FileTransfer} from "@ionic-native/file-transfer";
-import {InAppPurchase} from "@ionic-native/in-app-purchase";
 import {Camera} from "@ionic-native/camera";
 import {Media} from "@ionic-native/media";
 import {File} from "@ionic-native/file";
@@ -76,7 +75,9 @@ import {Deeplinks} from "@ionic-native/deeplinks";
     imports: [
         IonicModule.forRoot(MyApp, {
             menuType: 'overlay',
-            preloadModules: true
+            preloadModules: true,
+            scrollAssist: false,
+            autoFocusAssist: false
            // statusbarPadding: true
         }),
         SelectPageModule,
@@ -117,10 +118,8 @@ import {Deeplinks} from "@ionic-native/deeplinks";
         StatusBar,
         SplashScreen,
         Device,
-        Geolocation,
         ImagePicker,
         FileTransfer,
-        InAppPurchase,
         Camera,
         {provide: ErrorHandler, useClass: IonicErrorHandler},
         ApiQuery,

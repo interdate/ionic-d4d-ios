@@ -7,6 +7,7 @@ page-hello-ionic, search-results {
   .card-md, .card-ios {
     background: #eee;
     box-shadow: none;
+    display: inline-block;
   }
 
   .distance {
@@ -24,13 +25,10 @@ page-hello-ionic, search-results {
   }
 
   .item-md, .item-ios {
-    padding-left: 8px;
+    padding: 0 5px;
     position: relative;
   }
-  .item-md:nth-child(odd), .item-ios:nth-child(odd) {
-    padding-left: 0;
-    padding-right: 8px;
-  }
+
 
   .list-ios > .item-block:first-child {
     border-top: 0;
@@ -67,37 +65,15 @@ page-hello-ionic, search-results {
   }
 
 
-  .card-md {
-    width: calc(56% - 20px);
-    float: left;
-  }
-
-  .card-ios {
-    width: calc(56% - 23.6px);
-    float: left;
+  .card-md, .card-ios {
+    width: calc(50%);
   }
 
   .pbb{
     height: 50px;
   }
 
-  @media (min-width: 414px) {
-    .card-ios {
-      width: calc(55% - 20.7px)
-    }
-  }
 
-  @media (max-width: 376px) {
-    .card-ios {
-      width: calc(56% - 22.6px);
-    }
-  }
-
-  @media (max-width: 320px) {
-    .card-ios {
-      width: calc(57% - 22.6px);
-    }
-  }
 
 }
 
@@ -116,10 +92,6 @@ p
   text-align: center;
   height: 35px;
   width: 70px;
-}
-
-ion-card {
-  float: right;
 }
 
 .user-section > img {

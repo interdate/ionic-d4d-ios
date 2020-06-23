@@ -19,12 +19,12 @@ export class SettingsPage {
                 public navParams: NavParams,
                 private toastCtrl: ToastController,
                 public api: ApiQuery) {
-
+        // this.api.showLoad();
         this.api.http.get(api.url + '/user/settings', api.setHeaders(true)).subscribe(data => {
             //this.form = data.json().settings;
             this.form.newMessPushNotif = Boolean(parseInt(data.json().settings.newMessPushNotif));
             this.form.userGetMsgToEmail = Boolean(parseInt(data.json().settings.userGetMsgToEmail));
-
+            this.api.hideLoad();
         });
     }
 

@@ -10,18 +10,18 @@ import {Geolocation} from "@ionic-native/geolocation";
 })
 export class ApiQuery {
 
-    url: any;
-    header: RequestOptions;
+    public url: any;
+    public header: RequestOptions;
     public response: any;
     public showFooter: any = true;
     public pageName: any = false;
     public banner: any;
-    username: any = 'nologin';
-    password: any = 'nopass';
-    storageRes: any;
-    version: any = 110;
-    signupData: any;
-    loading: any;
+    public username: any = 'nologin';
+    public password: any = 'nopass';
+    public storageRes: any;
+    public version: any = 110;
+    public signupData: any;
+    public loading: any;
     public iosVersion: any;
     public is_payed: any = 0;
     public register: any = { status: false, text: 'Thank you for your registration at dating4disabled.com. ' +
@@ -38,7 +38,7 @@ export class ApiQuery {
                 private geolocation: Geolocation,
                 private sanitizer: DomSanitizer) {
 
-        //this.url = 'http://localhost:8100';
+        // this.url = 'http://localhost:8100';
         this.url = 'https://m.dating4disabled.com/api/v7';
         this.storage.get('user_id').then((val) => {
             this.storage.get('username').then((username) => {
@@ -113,7 +113,7 @@ export class ApiQuery {
 
     sendPhoneId(idPhone) {
         let data = JSON.stringify({deviceId: idPhone});
-        this.http.post(this.url + '/user/deviceId/OS:IOS', data, this.setHeaders(true)).subscribe(data => {
+        this.http.post(this.url + '/user/deviceId/OS:Android', data, this.setHeaders(true)).subscribe(data => {
             //alert(JSON.stringify(data));
             console.log('sendPhoneId: ', data.json());
         }, err => {

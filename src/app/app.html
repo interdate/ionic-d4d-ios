@@ -28,13 +28,12 @@
             <div *ngIf="is_login" tappable (click)="openPage(menu_items_settings[2])" class="username">{{ username }}
             </div>
             <div *ngFor="let menu_item of menu_items">
-                <button *ngIf="(menu_item._id == 'subscription' && is_payed == 0) || menu_item._id != 'subscription'" ion-item tappable (click)="openPage(menu_item)">
+                <button *ngIf="(menu_item._id == 'subscription' && api.is_payed == 0) || menu_item._id != 'subscription'" ion-item tappable (click)="openPage(menu_item)">
                     <ion-icon id="{{menu_item._id}}" name="{{menu_item.icon}}"></ion-icon>
                     {{menu_item.title}}
                     <ion-icon class="contact-arrow" *ngIf="menu_item._id == 'stats'" ios="ios-arrow-forward"
                               md="ios-arrow-forward"></ion-icon>
-                    <ion-badge class="btn-orange" *ngIf="is_login && menu_item.count != 0" item-right>{{ menu_item.count
-                        }}
+                    <ion-badge class="btn-orange" *ngIf="is_login && menu_item.count != 0" item-right>{{ menu_item.count }}
                     </ion-badge>
                 </button>
             </div>
@@ -51,7 +50,7 @@
                 <div tappable class="pinterest" (click)="goTo('https://www.pinterest.com/dating4disabled/')">
                     <img src="https://m.dating4disabled.com/images/pinterest.png">
                 </div>
-                <div tappable class="telegram" (click)="goTo('https://t.me/dating4disabled')">
+                <div tappable class="telegram" (click)="goTo('https://t.me/dating4disabled','_system')">
                     <img src="https://m.dating4disabled.com/images/telegram.png">
                 </div>
             </div>
