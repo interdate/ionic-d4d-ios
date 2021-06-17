@@ -331,7 +331,7 @@
         <div class="input">
             <div [ngClass]="{'yellow-bg':  error.userAboutMe }" class="placeholder" [innerHTML]="form.userAboutMe.label"></div>
             <ion-item>
-                <ion-textarea [(ngModel)]="form.userAboutMe.value" rows="8" >{{ form.userAboutMe.value }}</ion-textarea>
+                <ion-textarea id="userAboutMe" [(ngModel)]="form.userAboutMe.value" rows="8" >{{ form.userAboutMe.value }}</ion-textarea>
             </ion-item>
             <div *ngIf="error.userAboutMe" class="err">{{error.userAboutMe}}</div>
         </div>
@@ -339,7 +339,7 @@
         <div class="input">
             <div [ngClass]="{'yellow-bg':  error.userLookingFor }" class="placeholder" [innerHTML]="form.userLookingFor.label"></div>
             <ion-item>
-                <ion-textarea [(ngModel)]="form.userLookingFor.value" rows="8" >{{ form.userLookingFor.value }}</ion-textarea>
+                <ion-textarea id="userLookingFor" [(ngModel)]="form.userLookingFor.value" rows="8" >{{ form.userLookingFor.value }}</ion-textarea>
             </ion-item>
             <div *ngIf="error.userLookingFor" class="err">{{error.userLookingFor}}</div>
         </div>

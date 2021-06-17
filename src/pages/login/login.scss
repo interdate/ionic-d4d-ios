@@ -12,6 +12,11 @@ page-login {
   .bg-image {
     background: url(../assets/img/bg.jpg) no-repeat center;
     background-size: cover;
+    padding: 0px !important;
+  }
+
+  .bg-image .scroll-content{
+    padding: 0px !important;
   }
 
   ion-item.item-md, ion-item.item-ios {
@@ -40,9 +45,15 @@ page-login {
     font-weight: bold;
   }
 
-  ion-footer {
+  .login-form {
     background-color: rgba(0,0,0,0.5);
-    padding-top: 15px;;
+    padding-top: 15px;
+    width: 100%;
+  }
+
+  .space_login{
+    width: 100%;
+    height: calc(100vh - 312px);
   }
   .link-banner{ display: none; }
 }

@@ -78,6 +78,7 @@ export class LoginPage {
 
         this.http.get(this.api.url + '/user/login', this.setHeaders()).subscribe(data => {
                 this.validate(data.json());
+
                 this.api.hideLoad();
             },
             err => {
@@ -104,7 +105,7 @@ export class LoginPage {
     validate(response) {
 
         if (response.userId) {
-
+            this.api.is_payed = response.isPayed;
             this.api.storage.set('username', this.form.login.username.value);
             this.api.storage.set('password', this.form.login.password.value);
             this.api.storage.set('status', 'login');

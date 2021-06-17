@@ -117,7 +117,6 @@ import {Deeplinks} from "@ionic-native/deeplinks";
         StatusBar,
         SplashScreen,
         Device,
-        Geolocation,
         ImagePicker,
         FileTransfer,
         InAppPurchase,

@@ -508,7 +508,7 @@ export class MyApp {
     }
 
     removeBackground() {
-        //$('#menu3, #menu2').find('ion-backdrop').remove();
+        // $('#menu3, #menu2').find('ion-backdrop').remove();
     }
 
     openPage(page) {

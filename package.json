@@ -77,9 +77,35 @@
         "ionic": "3.20.0",
         "typescript": "~2.6.2"
     },
+    "cordovaPlugins": [
+        "cordova-plugin-whitelist",
+        "cordova-plugin-console",
+        "cordova-plugin-statusbar",
+        "cordova-plugin-device",
+        "cordova-plugin-splashscreen",
+        {
+            "variables": {
+                "SENDER_ID": "48205136182"
+            },
+            "locator": "phonegap-plugin-push",
+            "id": "phonegap-plugin-push"
+        }
+    ],
+    "cordovaPlatforms": [
+        "ansroid",
+        {
+            "platform": "ansroid",
+            "version": "",
+            "locator": "ansroid"
+        }
+    ],
     "description": "D4D: An Ionic project",
     "cordova": {
         "plugins": {
+            "cordova-plugin-geolocation": {
+                "GEOLOCATION_USAGE_DESCRIPTION": "To locate you"
+            },
+            "cordova-plugin-file": {},
             "cordova-plugin-market": {},
             "cordova-plugin-app-version": {},
             "ionic-plugin-keyboard": {},
@@ -89,14 +115,12 @@
                 "KEEP_AVAUDIOSESSION_ALWAYS_ACTIVE": "NO"
             },
             "cordova-plugin-inapppurchase": {},
-            "cordova-plugin-file": {},
             "cordova-plugin-ionic-webview": {},
             "phonegap-plugin-push": {
                 "SENDER_ID": "95543012588"
             },
             "cordova-plugin-camera": {},
             "cordova-plugin-file-transfer": {},
-            "cordova-plugin-geolocation": {},
             "cordova-plugin-splashscreen": {},
             "cordova-plugin-statusbar": {},
             "cordova-plugin-whitelist": {},
