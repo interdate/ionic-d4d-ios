@@ -42,9 +42,16 @@ export class LoginPage {
 
 
             this.api.storage.get('deviceToken').then((deviceToken) => {
-             this.api.storage.clear();
-             this.api.storage.set('deviceToken', deviceToken);
-             });
+                this.api.storage.clear();
+                this.api.storage.set('deviceToken', deviceToken);
+            });
+            if (this.api.register.status == 'not_activated') {
+                let alert = this.api.alertCtrl.create({
+                  message: this.api.register.text,
+                  buttons: ['ok']
+                });
+                alert.present();
+            }
 
         }else if(navParams.get('user')){
             this.api.storage.get('user_id').then((val) => {
@@ -114,9 +121,6 @@ export class LoginPage {
 
             this.api.setHeaders(true, this.form.login.username.value, this.form.login.password.value);
             var that = this;
-            setTimeout(function () {
-                that.events.publish('checkPayment:updated');
-            },700);
 
 
             this.navCtrl.push(HelloIonicPage, {

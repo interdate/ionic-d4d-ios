@@ -38,7 +38,7 @@ export class ApiQuery {
                 private geolocation: Geolocation,
                 private sanitizer: DomSanitizer) {
 
-        //this.url = 'http://localhost:8101';
+        // this.url = 'http://localhost:8100';
         this.url = 'https://m.dating4disabled.com/api/v7';
         this.storage.get('user_id').then((val) => {
             this.storage.get('username').then((username) => {
@@ -113,7 +113,7 @@ export class ApiQuery {
 
     sendPhoneId(idPhone) {
         let data = JSON.stringify({deviceId: idPhone});
-        this.http.post(this.url + '/user/deviceId/OS:IOS', data, this.setHeaders(true)).subscribe(data => {
+        this.http.post(this.url + '/user/deviceId/OS:Android', data, this.setHeaders(true)).subscribe(data => {
             //alert(JSON.stringify(data));
             console.log('sendPhoneId: ', data.json());
         }, err => {

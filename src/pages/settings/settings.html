@@ -14,11 +14,11 @@
 
 <ion-content padding>
 
-  <ion-item>
+  <ion-item *ngIf="form.userGetMsgToEmail !== ''">
     <ion-label>Send me notifications on email</ion-label>
     <ion-checkbox tappable (click)="submit('email')" [(ngModel)]="form.userGetMsgToEmail" color="danger" ></ion-checkbox>
   </ion-item>
-  <ion-item>
+  <ion-item *ngIf="form.newMessPushNotif !== ''">
     <ion-label>Send me push notifications</ion-label>
     <ion-checkbox tappable (click)="submit('push')" [(ngModel)]="form.newMessPushNotif" color="danger" ></ion-checkbox>
   </ion-item>

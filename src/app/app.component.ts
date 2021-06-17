@@ -25,7 +25,6 @@ import {PagePage} from '../pages/page/page';
 import {ApiQuery} from '../library/api-query';
 import {FaqPage} from "../pages/faq/faq";
 import {SubscriptionPage} from "../pages/subscription/subscription";
-import {InAppPurchase} from "@ionic-native/in-app-purchase";
 
 import * as $ from "jquery";
 import {SplashScreen} from "@ionic-native/splash-screen";
@@ -70,7 +69,6 @@ export class MyApp {
         'FreezeAccountPage','HomePage','InboxPage','NotificationsPage','PagePage',
         'ProfilePage','SearchPage','SearchResultsPage','SettingsPage'
     ];
-    paymentInterval: any;
 
     constructor(public platform: Platform,
                 public menu: MenuController,
@@ -80,7 +78,6 @@ export class MyApp {
                 private geolocation: Geolocation,
                 public events: Events,
                 public push: Push,
-                private iap: InAppPurchase,
                 public splashScreen: SplashScreen) {
         // set status bar to white
         this.statusBar.styleBlackTranslucent();
@@ -102,13 +99,7 @@ export class MyApp {
                 this.menu_items = this.menu_items_login;
                 //this.getBingo();
                 this.rootPage = HelloIonicPage;
-                setTimeout(function () {
-                    that.checkPayment();
-                },300);
-                this.paymentInterval = setInterval(function(){
-                    that.checkPayment();
-                    //All 30 min
-                },1800000);
+
             }
             this.nav.setRoot(this.rootPage);
             this.nav.popToRoot();
@@ -146,37 +137,7 @@ export class MyApp {
             this.getStatistics();
 
         });
-        this.events.subscribe('checkPayment:updated', () => {
-            // user and time are the same arguments passed in `events.publish(user, time)`
-            console.log('checkPayment event');
-            this.checkPayment();
-        });
-    }
 
-    checkPayment(){
-        if(this.api.is_payed == 0) {
-            var that = this;
-            this.iap.restorePurchases().then(function (data) {
-                //this.restore = data;
-                console.log('checkPayment: ' + JSON.stringify(data));
-                /*
-                 [{
-                 transactionId: ...
-                 productId: ...
-                 state: ...
-                 date: ...
-                 }]
-                 */
-                console.log(that.api.setHeaders(true));
-                that.api.http.post(that.api.url + '/user/subscription/restore', data, that.api.setHeaders(true)).subscribe(res => {
-                    console.log('Restore: ' + JSON.stringify(res.json()));
-                }, error => {
-                    console.log('Restore: ' + error);
-                });
-            }).catch(function (err) {
-                //console.log('Restore: ' + err);
-            });
-        }
     }
 
     closeMsg() {
@@ -448,7 +409,7 @@ export class MyApp {
         }
         const options: PushOptions = {
             android: {
-                senderID: "12121212121",
+                senderID: "95543012588",
                 sound: true
             },
             ios: {
@@ -518,7 +479,9 @@ export class MyApp {
             this.status = '';
         } else if (page._id == 'subscription') {
             this.api.storage.get('user_id').then((user_id) => {
-                this.nav.push(SubscriptionPage);
+                if(user_id) {
+                    window.open('https://m.dating4disabled.com/subscription/?app_user_id=' + user_id, '_blank');
+                }
             });
         }
 
@@ -642,15 +605,6 @@ export class MyApp {
             this.api.http.get(this.api.url + '/user/login', headers).subscribe(data => {
                     this.api.storage.set('status', 'login');
                     this.api.is_payed = data.json().isPayed;
-                    if(this.api.is_payed == 0){
-                        let that = this;
-                        this.paymentInterval = setInterval(function(){
-                            that.checkPayment();
-                            //All 30 min
-                        },1800000);
-                    }else{
-                        clearInterval(this.paymentInterval);
-                    }
                 },
                 err => {
                     //this.api.storage.remove('status');

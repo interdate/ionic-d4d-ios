@@ -272,17 +272,17 @@ export class ChangePhotosPage {
             text: this.texts.reg_success,
             status: 'not_activated'
         };
-        //if (this.api.register.status == 'not_activated') {
+
+        if (this.api.register.status == 'not_activated') {
             let alert = this.alertCtrl.create({
                 message: this.api.register.text,
                 buttons: ['ok']
             });
             alert.present();
-        //}
+        }
 
         //this.navCtrl.push(HelloIonicPage);
         this.navCtrl.push(LoginPage, {page: {_id: 'logout'}});
-
 
     }
 

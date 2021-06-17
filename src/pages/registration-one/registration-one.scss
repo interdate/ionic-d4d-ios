@@ -1,6 +1,6 @@
 page-registration, page-edit-profile {
 
-  .text-input-ios {
+  .text-input-md {
     width: 94%;
     margin: 11px 3%;
   }
@@ -66,7 +66,7 @@ page-registration, page-edit-profile {
 
   ion-input:before, select-alertless:before, ion-datetime:before {
     content:"edit";
-    background: url("../assets/img/edit.png") no-repeat;
+    background: url('../assets/img/edit.png') no-repeat;
     background-size: 50% auto;
     background-position: center;
     width: 50px;
@@ -103,13 +103,13 @@ page-registration, page-edit-profile {
     text-align: center;
   }
 
-  .item-md {
-    padding-left: 0px;
-  }
-
-  .label-md {
-    margin-top: 0px;
-  }
+  //.item-md {
+  //  padding-left: 0px;
+  //}
+  //
+  //.label-md {
+  //  margin-top: 0px;
+  //}
 
   textarea {
     width: 100%;
